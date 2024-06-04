@@ -1,7 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "@/Components/Header/Header";
+import ThemeProvider from "@/ThemeProvider/ThemeProvider";
+import { NeueMachina } from "@/utils/customFonts";
+import Footer from "@/Components/Footer/Footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +13,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang='en'>
+      <body className={NeueMachina.className}>
+        <ThemeProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
