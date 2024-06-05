@@ -11,17 +11,17 @@ import { useContext, useEffect } from "react";
 const DarkMode = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-      localStorage.setItem("theme", "light");
-    }
-  }, [theme]); // Moved the dependency array inside useEffect
+  // useEffect(() => {
+  //   if (theme === "dark") {
+  //     document.documentElement.classList.add("dark");
+  //     document.documentElement.classList.remove("light");
+  //     localStorage.setItem("theme", "dark");
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //     document.documentElement.classList.add("light");
+  //     localStorage.setItem("theme", "light");
+  //   }
+  // }, [theme]); // Moved the dependency array inside useEffect
 
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");

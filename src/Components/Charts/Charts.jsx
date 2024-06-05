@@ -94,8 +94,8 @@ const Charts = () => {
             y2='127'
             gradientUnits='userSpaceOnUse'
           >
-            <stop stop-color='#38B6FF' stop-opacity='0.4' />
-            <stop offset='1' stop-color='#38B6FF' stop-opacity='0' />
+            <stop stopColor='#38B6FF' stopOpacity='0.4' />
+            <stop offset='1' stopColor='#38B6FF' stopOpacity='0' />
           </linearGradient>
         </defs>
 
