@@ -31,7 +31,7 @@ const LeaderBoard = () => {
           </div>
         </div>
         <div className='table-responsive'>
-          <table class='table'>
+          <table className='table'>
             <thead>
               <tr>
                 <th scope='col'>Network</th>
@@ -58,10 +58,13 @@ const LeaderBoard = () => {
             </thead>
             <tbody>
               <tr>
-                <td scope='row'>
+                <td className='tw-bg-black-medium' scope='row'>
                   <img src={network.src} alt='' />
                 </td>
-                <td style={{ display: "flex", gap: "10px" }}>
+                <td
+                  className='tw-bg-black-medium'
+                  style={{ display: "flex", gap: "10px" }}
+                >
                   <div>
                     <img src={vault.src} alt='' />
                   </div>
@@ -70,12 +73,39 @@ const LeaderBoard = () => {
                     <p>dHEDGE</p>
                   </div>
                 </td>
-                <td style={{ color: "#000" }}>$1.173</td>
-                <td style={{ color: "#DE0A0A" }}>0.07%</td>
-                <td style={{ color: "#01A412" }}>0.37%</td>
-                <td style={{ color: "#01A412" }}>0.85%</td>
-                <td style={{ color: "#01A412" }}>8.1%</td>
-                <td style={{ color: "#000" }}>9.16%</td>
+                <td className='tw-bg-black-medium' style={{ color: "#000" }}>
+                  $1.173
+                </td>
+                <td className='tw-bg-black-medium' style={{ color: "#000" }}>
+                  $1.173
+                </td>
+                <td className='tw-bg-black-medium' style={{ color: "#DE0A0A" }}>
+                  0.07%
+                </td>
+                <td className='tw-bg-black-medium' style={{ color: "#000" }}>
+                  $1.173
+                </td>
+
+                <td className='tw-bg-black-medium' style={{ color: "#01A412" }}>
+                  8.1%
+                </td>
+                <td
+                  className='tw-p-3
+                tw-whitespace-nowrap
+                tw-text-sm
+                tw-text-black-dark
+                tw-text-white
+                tw-bg-white-medium
+                tw-bg-black-medium
+                tw-text-center
+                tw-rounded-l-lg
+                group-hover:tw-bg-white-dark
+                group-hover:tw-bg-black-light
+                tw-cursor-pointer'
+                  style={{ color: "#000" }}
+                >
+                  9.16%
+                </td>
               </tr>
               <tr>
                 <td scope='row'>

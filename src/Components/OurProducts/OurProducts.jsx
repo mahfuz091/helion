@@ -8,7 +8,7 @@ const OurProducts = () => {
     <div className='our_products'>
       <Container>
         <h2>Our Products</h2>
-        <div className=' d-lg-flex justify-content-center gap-60'>
+        <div className=' d-md-flex justify-content-center gap-60'>
           <img src={product_1.src} alt='' />
           <img src={product_2.src} alt='' />
         </div>

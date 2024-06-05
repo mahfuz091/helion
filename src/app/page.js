@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+// import "./page.module.css";
 import Banner from "@/Components/Banner/Banner";
 import Blog from "@/Components/Blog/Blog";
 import OurVault from "@/Components/OurVault/OurVault";

@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body className={NeueMachina.className}>
         <ThemeProvider>
+          <div className='main-radial-gradient'></div>
           <Header />
           {children}
           <Footer />
