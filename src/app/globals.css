@@ -17,6 +17,9 @@ a {
 .our_vault .vault_row.row {
   --bs-gutter-y: 1.5rem !important;
 }
+input:focus {
+  outline: none;
+}
 
 .thm_btn {
   display: flex;
@@ -27,6 +30,15 @@ a {
   border-radius: 8px;
   background: var(--Primary-Color-400-Main, #38b6ff);
   border: none;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.thm_btn:hover {
+  background: #1e90ff; /* A slightly darker shade for hover */
+  transform: scale(1.05); /* Slightly enlarges the button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow */
 }
 .thm_btn a {
   color: var(--Text-Colors-100, #f4f5f7);
@@ -60,13 +72,36 @@ a {
 
 .header {
   padding: 24px 0;
+  /* position: relative;
+  z-index: 99999; */
+}
+.header .container .d-flex.align-items-center.gap-4 {
   position: relative;
-  z-index: 999;
+  z-index: 99999;
 }
 .header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header .main_menu a {
+  color: var(--Primary-Color-400-Main, #38b6ff);
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 21.6px */
+  padding-bottom: 8px;
+  position: relative;
+}
+.header .main_menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  border-bottom: 2px solid #38b6ff;
 }
 
 /* ----------------
@@ -74,6 +109,8 @@ a {
 ------------------ */
 .modal-dialog {
   max-width: 390px;
+  z-index: 99999999999;
+  position: relative;
 }
 .modal-header {
   border-bottom: none;
@@ -81,9 +118,10 @@ a {
 .modal-content {
   padding: 0 30px;
 }
-.modal-content h4 {
+.modal-content h4,
+.dark .modal-content h4 {
   margin-bottom: 30px;
-  color: var(--Text-Colors-900, #09090b);
+  color: var(--Text-Colors-900, #09090b) !important;
   text-align: center;
 
   /* font-family: "Neue Machina"; */
@@ -116,6 +154,24 @@ a {
 
   width: 100%;
 }
+.modal-dialog .thm_btn {
+  padding: 17px 32px;
+  color: #fff;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 17.6px */
+}
+.modal-dialog .desc {
+  color: var(--Text-Colors-600, #525468);
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+  margin-top: 32px;
+}
 
 /*----------------
        banner
@@ -126,6 +182,8 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  z-index: 999;
 }
 
 .banner .banner_content {
@@ -581,6 +639,10 @@ a {
   line-height: 60px; /* 120% */
   margin-bottom: 60px;
 }
+.dark .our_products .container .d-md-flex img:last-child {
+  background: #fff;
+  padding: 8px;
+}
 
 @media (max-width: 767px) {
   .our_products .container {
@@ -657,6 +719,12 @@ a {
   font-weight: 400;
   line-height: 32px; /* 177.778% */
 }
+.footer ul li:hover a {
+  color: #d8d8d8;
+}
+.dark .footer ul li:hover a {
+  color: #d8d8d8 !important;
+}
 
 .lets_talk_btn {
   padding: 14px 20px;
@@ -673,6 +741,7 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: #1d1d1b;
   padding: 20px;
+  color: #fff;
 }
 
 .footer_line {

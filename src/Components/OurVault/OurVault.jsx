@@ -16,28 +16,43 @@ const OurVault = () => {
   //   const date = new Date(adjustedTimestamp);
   //   return date?.toISOString();
   // };
-  // useEffect(() => {
-  //   axios
-  //     .get("/index.json")
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       setDatap(response.data?.pageProps.dehydratedState.queries);
-  //       // Do something with the data
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching data:", error);
-  //     });
-  //   axios
-  //     .get("/p.json")
-  //     .then((response) => {
-  //       // console.log("PP", response.data);
-  //       // setData(response.data?.pageProps.dehydratedState.queries);
-  //       // Do something with the data
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching data:", error);
-  //     });
-  // }, []);
+  //   useEffect(() => {
+  //     const query =   query GetPoolApyHistory($fundAddress: String!, $period: String!) {
+  //       apyHistory(fundAddress: $fundAddress, period: $period) {
+  //         monthly
+  //         weekly
+  //         timestamp
+  //       }
+  //     }
+  //     axios
+  //       .get("/index.json")
+  //       .then((response) => {
+  //         console.log(response.data);
+  //         setDatap(response.data?.pageProps.dehydratedState.queries);
+  //         // Do something with the data
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching data:", error);
+  //       });
+  //     axios
+  //       .get("/p.json")
+  //       .then((response) => {
+  //         // console.log("PP", response.data);
+  //         // setData(response.data?.pageProps.dehydratedState.queries);
+  //         // Do something with the data
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching data:", error);
+  //       });
+  //   }, []);
+  //   query GetPoolApyHistory($fundAddress: String!, $period: String!) {
+  //   apyHistory(fundAddress: $fundAddress, period: $period) {
+  //     monthly
+  //     weekly
+  //     timestamp
+  //   }
+  // }
+
   return (
     <div className='our_vault'>
       <Container>
