@@ -1,9 +1,22 @@
-import React from "react";
+"use client";
+import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import background_image from "../../app/assets/images/banner-img.png";
 import b_chart from "../../app/assets/images/B.png";
+import axios from "axios";
 
 const Banner = () => {
+  useEffect(() => {
+    axios
+      .get("https://toros.finance/_next/data/lp9lmi5LR83t4kt0ybQXB/index.json")
+      .then((response) => {
+        console.log(response.data);
+        // Do something with the data
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
   return (
     <div className='banner'>
       <Container>
