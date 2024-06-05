@@ -3,10 +3,14 @@ import React, { createContext, useState, useEffect } from "react";
 
 export const ThemeContext = createContext(null);
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(() => {
-    // Get initial theme from localStorage or default to 'light'
-    return localStorage.getItem("theme") || "light";
-  });
+  const getInitialTheme = () => {
+    if (typeof localStorage !== "undefined") {
+      return localStorage.getItem("theme") || "light";
+    }
+    return "light";
+  };
+
+  const [theme, setTheme] = useState(getInitialTheme);
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -21,12 +25,7 @@ const ThemeProvider = ({ children }) => {
 
   const themeInfo = {
     theme,
-    setTheme: (newTheme) => {
-      setTheme(newTheme);
-      if (typeof window !== "undefined" && localStorage) {
-        localStorage.setItem("theme", newTheme);
-      }
-    },
+    setTheme,
   };
   return (
     <ThemeContext.Provider value={themeInfo}>{children}</ThemeContext.Provider>
