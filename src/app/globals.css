@@ -790,3 +790,24 @@ input:focus {
 /* 
 
 class="tw-p-3 tw-whitespace-nowrap tw-text-sm tw-text-black-dark dark:tw-text-white tw-bg-white-medium dark:tw-bg-black-medium tw-text-center tw-rounded-l-lg group-hover:tw-bg-white-dark dark:group-hover:tw-bg-black-light tw-cursor-pointer"*/
+/* .our_vault
+  .recharts-cartesian-axis-ticks
+  .recharts-layer.recharts-cartesian-axis-tick:first-child {
+  display: none !important;
+} */
+
+.nav {
+  --bs-nav-link-padding-x: 0 !important;
+  --bs-nav-link-padding-y: 0 !important;
+  gap: 20px;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  border-radius: 100px;
+  background: #d6f0ff;
+  display: flex;
+  padding: 4px 10px;
+  align-items: center;
+  gap: 4px;
+}
