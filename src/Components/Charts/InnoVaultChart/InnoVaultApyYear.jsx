@@ -52,7 +52,7 @@ const InnoVaultApyYear = () => {
     "Dec",
   ];
 
-  console.log(data);
+  // console.log(data);
   const formatDate = (timestamp) => {
     const date = new Date(timestamp * 1000);
     const options = { month: "long", day: "numeric", year: "numeric" };
@@ -64,7 +64,7 @@ const InnoVaultApyYear = () => {
     return `${months[date.getMonth()]} ${date.getFullYear()}`;
   };
 
-  console.log("LL", convertTimestampToDate(1703894400));
+  // console.log("LL", convertTimestampToDate(1703894400));
 
   return (
     <div

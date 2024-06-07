@@ -64,7 +64,7 @@ const InnoPriceWeek = () => {
   //     return date.toLocaleDateString("en-US", options);
   //   };
   const formatDate = (timestamp) => {
-    console.log(typeof timestamp);
+    // console.log(typeof timestamp);
     const num = parseFloat(timestamp);
     const date = new Date(num);
     const options = {
@@ -99,7 +99,7 @@ const InnoPriceWeek = () => {
     return `${date.getDate()} ${months[date.getMonth()]}`;
   };
 
-  console.log("PP", formatDate(1715095800000));
+  // console.log("PP", formatDate(1715095800000));
 
   return (
     <div

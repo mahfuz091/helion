@@ -32,7 +32,7 @@ const StableEdgeVault = () => {
         <div>
           <Link
             target='_blank'
-            href='https://toros.finance/vault/0x1ec50880101022c11530a069690f5446d1464592'
+            href='https://dhedge.org/vault/0xd0872b912b0e6eed2b1d5564b4bf146d0f2b2499'
           >
             <button className='thm_btn'>
               <svg

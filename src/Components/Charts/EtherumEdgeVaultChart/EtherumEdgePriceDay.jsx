@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Area, AreaChart, Tooltip, XAxis, YAxis } from "recharts";
 
-const PerpetualPriceYear = () => {
+const EtherumEdgePriceDay = () => {
   const [data, setData] = useState([]);
   const [minTokenPrice, setMinTokenPrice] = useState(null); // State to store the minimum token price
 
@@ -20,8 +20,8 @@ const PerpetualPriceYear = () => {
       }
     `;
     const variables = {
-      fundAddress: "0xb9243c495117343981ec9f8aa2abffee54396fc0",
-      period: "1y",
+      fundAddress: "0xb2cfb909e8657c0ec44d3dd898c1053b87804755",
+      period: "1d",
     };
     const operationName = "GetTokenPriceHistory";
 
@@ -64,9 +64,14 @@ const PerpetualPriceYear = () => {
   //     return date.toLocaleDateString("en-US", options);
   //   };
   const formatDate = (timestamp) => {
+    // console.log(typeof timestamp);
     const num = parseFloat(timestamp);
     const date = new Date(num);
-    const options = { month: "long", day: "numeric", year: "numeric" };
+    const options = {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    };
 
     return date.toLocaleDateString("en-US", options);
   };
@@ -86,8 +91,17 @@ const PerpetualPriceYear = () => {
   ];
   const convertTimestampToDate = (timestamp) => {
     const date = new Date(parseFloat(timestamp));
-    return `${months[date.getMonth()]} ${date.getFullYear()}`;
+    let hours = date.getHours();
+    const minutes = date.getMinutes();
+    const amPM = hours >= 12 ? "PM" : "AM";
+
+    // Convert hours to 12-hour format
+    hours = hours % 12 || 12;
+    // return `${date.getDate()} ${months[date.getMonth()]}`;
+    return hours + ":" + (minutes < 10 ? "0" : "") + minutes + " " + amPM;
   };
+
+  // console.log("PD", formatDate(1717608900000));
 
   return (
     <div
@@ -101,9 +115,9 @@ const PerpetualPriceYear = () => {
       <AreaChart data={data} width={580} height={200}>
         <XAxis
           dataKey='timestamp'
-          tickFormatter={(u) => convertTimestampToDate(u)}
+          tickFormatter={(unixTime) => convertTimestampToDate(unixTime)}
           tick={{ fontSize: 10 }}
-          interval={30}
+          interval={10}
         />
         <YAxis
           tickFormatter={(value) => (parseFloat(value) + 1).toFixed(2)}
@@ -114,6 +128,7 @@ const PerpetualPriceYear = () => {
           content={({ payload }) => {
             if (payload && payload.length > 0) {
               const tokenPrice = payload[0].payload.adjustedTokenPrice;
+              // console.log((parseFloat(tokenPrice) + 1).toFixed(4));
 
               const date = formatDate(payload[0].payload.timestamp);
 
@@ -127,10 +142,9 @@ const PerpetualPriceYear = () => {
                     fontSize: "15px",
                   }}
                 >
-                  <p style={{ marginBottom: "0" }}>Token Price</p>
                   <p style={{ marginBottom: "0" }}>{date}</p>
                   <p style={{ marginBottom: "0" }}>
-                    {(parseFloat(tokenPrice) + 1).toFixed(4)}
+                    USDmny: ${(parseFloat(tokenPrice) + 1).toFixed(4)}
                   </p>
                 </div>
               );
@@ -149,4 +163,4 @@ const PerpetualPriceYear = () => {
   );
 };
 
-export default PerpetualPriceYear;
+export default EtherumEdgePriceDay;

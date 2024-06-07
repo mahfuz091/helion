@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Area, AreaChart, Tooltip, XAxis, YAxis } from "recharts";
 const InnoVaultApyMonth = () => {
   const [data, setData] = useState([]);
-  console.log(data);
+  // console.log(data);
   const fetchData = async () => {
     const query = `
       query GetPoolApyHistory($fundAddress: String!, $period: String!) {

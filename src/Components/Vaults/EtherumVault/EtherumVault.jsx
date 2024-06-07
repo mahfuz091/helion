@@ -3,17 +3,18 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Tab, Nav } from "react-bootstrap";
 import img from "../../../app/assets/images/Rectangle 3467615.png";
 import img_1 from "../../../app/assets/images/Frame1413372731.png";
-import PerpetualPriceDay from "@/Components/Charts/PerpetualVault/PerpetualPriceDay";
-import PerpetualPriceWeek from "@/Components/Charts/PerpetualVault/PerpetualPriceWeek";
-import PerpetualPriceYear from "@/Components/Charts/PerpetualVault/PerpetualPriceYear";
-import PerpetualPriceMonth from "@/Components/Charts/PerpetualVault/PerpetualPriceMonth";
-import PerpetualVaultApyMonth from "@/Components/Charts/PerpetualVault/PerpetualVaultApyMonth";
-import PerpetualVaultApyYear from "@/Components/Charts/PerpetualVault/PerpetualVaultApyYear";
-import Link from "next/link";
 
-const PerpetualVault = () => {
-  const [price, setPrice] = useState(false);
-  const [apy, setApy] = useState(true);
+import Link from "next/link";
+import EtherumEdgePriceDay from "@/Components/Charts/EtherumEdgeVaultChart/EtherumEdgePriceDay";
+import EtherumEdgePriceWeek from "@/Components/Charts/EtherumEdgeVaultChart/EtherumEdgePriceWeek";
+import EtherumEdgePriceYear from "@/Components/Charts/EtherumEdgeVaultChart/EtherumEdgePriceYear";
+import EtherumEdgePriceMonth from "@/Components/Charts/EtherumEdgeVaultChart/EherumEdgePriceMonth";
+import EtherumEdgeVaultApyMonth from "@/Components/Charts/EtherumEdgeVaultChart/EtherumEdgeVaultApyMonth";
+import EtherumEdgeVaultApyYear from "@/Components/Charts/EtherumEdgeVaultChart/EtherumEdgeVaultApyYear";
+
+const EtherumVault = () => {
+  const [price, setPrice] = useState(true);
+  const [apy, setApy] = useState(false);
   const handlePrice = () => {
     setPrice(true);
     setApy(false);
@@ -27,12 +28,12 @@ const PerpetualVault = () => {
       <div className='d-flex justify-content-between'>
         <div className='d-flex gap-4 w-100'>
           <img src={img.src} alt='' />
-          <h3>Helion Perpetual Neutral Edge</h3>
+          <h3>Helion Ethereum Edge</h3>
         </div>
         <div>
           <Link
             target='_blank'
-            href='https://dhedge.org/vault/0xee69418fb9c5eefa3521b170fdd112273bd5052a'
+            href='https://dhedge.org/vault/0xc1ad01be0b1392f0b19f4813fbb6b911caa3cff7'
           >
             <button className='thm_btn'>
               <svg
@@ -96,7 +97,7 @@ const PerpetualVault = () => {
           </div>
         </div>
       </div>
-      <Tab.Container id='left-tabs-example' defaultActiveKey='apyYear'>
+      <Tab.Container id='left-tabs-example' defaultActiveKey='priceYear'>
         <div className='pool_btn_group d-md-flex'>
           <div className='d-flex gap-4'>
             <div className='d-flex gap-2'>
@@ -183,23 +184,23 @@ const PerpetualVault = () => {
         </div>
         <Tab.Content>
           <Tab.Pane eventKey='priceDay'>
-            <PerpetualPriceDay />
+            <EtherumEdgePriceDay />
             <p>Month</p>
           </Tab.Pane>
           <Tab.Pane eventKey='priceWeek'>
-            <PerpetualPriceWeek />
+            <EtherumEdgePriceWeek />
           </Tab.Pane>
           <Tab.Pane eventKey='priceYear'>
-            <PerpetualPriceYear />
+            <EtherumEdgePriceYear />
           </Tab.Pane>
           <Tab.Pane eventKey='priceMonth'>
-            <PerpetualPriceMonth />
+            <EtherumEdgePriceMonth />
           </Tab.Pane>
           <Tab.Pane eventKey='apyMonth'>
-            <PerpetualVaultApyMonth />
+            <EtherumEdgeVaultApyMonth />
           </Tab.Pane>
           <Tab.Pane eventKey='apyYear'>
-            <PerpetualVaultApyYear />
+            <EtherumEdgeVaultApyYear />
           </Tab.Pane>
         </Tab.Content>
       </Tab.Container>
@@ -207,4 +208,4 @@ const PerpetualVault = () => {
   );
 };
 
-export default PerpetualVault;
+export default EtherumVault;

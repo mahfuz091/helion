@@ -58,13 +58,7 @@ const PerpetualPriceWeek = () => {
     fetchData();
   }, []);
 
-  //   const formatDate = (timestamp) => {
-  //     const date = new Date(timestamp * 1000);
-  //     const options = { month: "long", day: "numeric", year: "numeric" };
-  //     return date.toLocaleDateString("en-US", options);
-  //   };
   const formatDate = (timestamp) => {
-    console.log(typeof timestamp);
     const num = parseFloat(timestamp);
     const date = new Date(num);
     const options = {
@@ -98,8 +92,6 @@ const PerpetualPriceWeek = () => {
     const date = new Date(parseFloat(timestamp));
     return `${date.getDate()} ${months[date.getMonth()]}`;
   };
-
-  console.log("PP", formatDate(1715095800000));
 
   return (
     <div

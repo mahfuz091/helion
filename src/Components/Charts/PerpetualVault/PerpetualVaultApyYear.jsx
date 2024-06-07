@@ -52,7 +52,6 @@ const PerpetualVaultApyYear = () => {
     "Dec",
   ];
 
-  console.log(data);
   const formatDate = (timestamp) => {
     const date = new Date(timestamp * 1000);
     const options = { month: "long", day: "numeric", year: "numeric" };
@@ -63,8 +62,6 @@ const PerpetualVaultApyYear = () => {
     const date = new Date(timestamp * 1000);
     return `${months[date.getMonth()]} ${date.getFullYear()}`;
   };
-
-  console.log("LL", convertTimestampToDate(1703894400));
 
   return (
     <div

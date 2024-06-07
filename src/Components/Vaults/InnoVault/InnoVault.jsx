@@ -14,6 +14,7 @@ import Link from "next/link";
 const InnoVault = () => {
   const [price, setPrice] = useState(false);
   const [apy, setApy] = useState(true);
+  const [apyP, setApyP] = useState("17.04");
   const handlePrice = () => {
     setPrice(true);
     setApy(false);
@@ -21,6 +22,11 @@ const InnoVault = () => {
   const handleApy = () => {
     setPrice(false);
     setApy(true);
+  };
+
+  const handleSelectChange = (e) => {
+    const value = e.target.value;
+    setApyP(value);
   };
   return (
     <div className='vaults'>
@@ -32,7 +38,7 @@ const InnoVault = () => {
         <div>
           <Link
             target='_blank'
-            href='https://toros.finance/vault/0x49bf093277bf4dde49c48c6aa55a3bda3eedef68'
+            href='https://dhedge.org/vault/0xc1ad01be0b1392f0b19f4813fbb6b911caa3cff7'
           >
             <button className='thm_btn'>
               <svg
@@ -60,35 +66,29 @@ const InnoVault = () => {
       </div>
       <div className='d-flex align-items-center gap-4 mt-16'>
         <div className='m_percentage'>
-          <p>0.74% 1M</p>
+          <p>1.32% 1M</p>
         </div>
         <div className='m_total'>
           <div className='m_total-head'>
             <p>APY</p>
-            <select name='' id=''>
-              <option value=''>
-                1M{" "}
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='8'
-                  height='4'
-                  viewBox='0 0 8 4'
-                  fill='none'
-                >
-                  <path
-                    d='M3.68784 3.89139L0.127804 0.861476C0.045398 0.791398 0 0.697849 0 0.598101C0 0.498353 0.045398 0.404805 0.127804 0.334726L0.389915 0.111594C0.560711 -0.0335999 0.838302 -0.0335999 1.00884 0.111594L3.99834 2.65589L6.99116 0.108771C7.07357 0.0386925 7.18342 0 7.30056 0C7.41783 0 7.52768 0.0386925 7.61015 0.108771L7.8722 0.331903C7.9546 0.402037 8 0.49553 8 0.595278C8 0.695026 7.9546 0.788575 7.8722 0.858653L4.30891 3.89139C4.22624 3.96164 4.11587 4.00022 3.99854 4C3.88075 4.00022 3.77044 3.96164 3.68784 3.89139Z'
-                    fill='black'
-                  />
-                </svg>
-              </option>
-            </select>
+            <div className='custom_select'>
+              <select
+                onChange={handleSelectChange}
+                name=''
+                id=''
+                defaultValue={apyP}
+              >
+                <option value='17.04'>1M </option>
+                <option value='30.54'>1W </option>
+              </select>
+            </div>
           </div>
           <div className='pool-stats d-flex '>
             <div className='w-33'>
-              <p>9.24%</p>
+              <p>{apyP} %</p>
             </div>
             <div className='w-33'>
-              <p>$130,578</p>
+              <p>$$132,129</p>
             </div>
             <div className='w-33'>
               <img src={img_1.src} alt='' />

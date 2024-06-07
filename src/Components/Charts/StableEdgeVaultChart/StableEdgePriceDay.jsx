@@ -64,7 +64,6 @@ const StableEdgePriceDay = () => {
   //     return date.toLocaleDateString("en-US", options);
   //   };
   const formatDate = (timestamp) => {
-    console.log(typeof timestamp);
     const num = parseFloat(timestamp);
     const date = new Date(num);
     const options = {
@@ -100,8 +99,6 @@ const StableEdgePriceDay = () => {
     // return `${date.getDate()} ${months[date.getMonth()]}`;
     return hours + ":" + (minutes < 10 ? "0" : "") + minutes + " " + amPM;
   };
-
-  console.log("PD", formatDate(1717608900000));
 
   return (
     <div

@@ -64,7 +64,6 @@ const StableEdgePriceYear = () => {
   //     return date.toLocaleDateString("en-US", options);
   //   };
   const formatDate = (timestamp) => {
-    console.log(typeof timestamp);
     const num = parseFloat(timestamp);
     const date = new Date(num);
     const options = { month: "long", day: "numeric", year: "numeric" };
@@ -89,8 +88,6 @@ const StableEdgePriceYear = () => {
     const date = new Date(parseFloat(timestamp));
     return `${months[date.getMonth()]} ${date.getFullYear()}`;
   };
-
-  console.log("PP", formatDate(1716475800000));
 
   return (
     <div
@@ -117,7 +114,6 @@ const StableEdgePriceYear = () => {
           content={({ payload }) => {
             if (payload && payload.length > 0) {
               const tokenPrice = payload[0].payload.adjustedTokenPrice;
-              console.log((parseFloat(tokenPrice) + 1).toFixed(4));
 
               const date = formatDate(payload[0].payload.timestamp);
 

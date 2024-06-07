@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Area, AreaChart, Tooltip, XAxis, YAxis } from "recharts";
 
-const StableEdgeVaultApyYear = () => {
+const EtherumEdgeVaultApyYear = () => {
   const [data, setData] = useState([]);
   // console.log(data);
   const fetchData = async () => {
@@ -17,7 +17,7 @@ const StableEdgeVaultApyYear = () => {
       }
     `;
     const variables = {
-      fundAddress: "0x1ec50880101022c11530a069690f5446d1464592",
+      fundAddress: "0xb2cfb909e8657c0ec44d3dd898c1053b87804755",
       period: "1y",
     };
 
@@ -52,6 +52,7 @@ const StableEdgeVaultApyYear = () => {
     "Dec",
   ];
 
+  // console.log(data);
   const formatDate = (timestamp) => {
     const date = new Date(timestamp * 1000);
     const options = { month: "long", day: "numeric", year: "numeric" };
@@ -63,7 +64,7 @@ const StableEdgeVaultApyYear = () => {
     return `${months[date.getMonth()]} ${date.getFullYear()}`;
   };
 
-  console.log("LL", convertTimestampToDate(1703894400));
+  // console.log("LL", convertTimestampToDate(1703894400));
 
   return (
     <div
@@ -142,4 +143,4 @@ const StableEdgeVaultApyYear = () => {
   );
 };
 
-export default StableEdgeVaultApyYear;
+export default EtherumEdgeVaultApyYear;

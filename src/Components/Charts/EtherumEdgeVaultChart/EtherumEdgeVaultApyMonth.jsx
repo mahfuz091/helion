@@ -2,8 +2,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Area, AreaChart, Tooltip, XAxis, YAxis } from "recharts";
-
-const StableEdgeVaultApyYear = () => {
+const EtherumEdgeVaultApyMonth = () => {
   const [data, setData] = useState([]);
   // console.log(data);
   const fetchData = async () => {
@@ -17,22 +16,23 @@ const StableEdgeVaultApyYear = () => {
       }
     `;
     const variables = {
-      fundAddress: "0x1ec50880101022c11530a069690f5446d1464592",
-      period: "1y",
+      fundAddress: "0xb2cfb909e8657c0ec44d3dd898c1053b87804755",
+      period: "1m", // Updated period to "1m" for 1 month
     };
+    const operationName = "GetPoolApyHistory"; // Updated operation name
 
     try {
       const response = await axios.post("https://api-v2.dhedge.org/graphql", {
         query: query,
         variables: variables,
-        operationName: "GetPoolApyHistory",
+        operationName: operationName,
       });
-      setData(response.data.data.apyHistory);
+      setData(response?.data?.data.apyHistory);
     } catch (error) {
-    } finally {
+      console.error("Error fetching data:", error);
+      // Handle error here, such as showing an error message to the user
     }
   };
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -60,10 +60,8 @@ const StableEdgeVaultApyYear = () => {
 
   const convertTimestampToDate = (timestamp) => {
     const date = new Date(timestamp * 1000);
-    return `${months[date.getMonth()]} ${date.getFullYear()}`;
+    return `${date.getDate()} ${months[date.getMonth()]}`;
   };
-
-  console.log("LL", convertTimestampToDate(1703894400));
 
   return (
     <div
@@ -79,7 +77,7 @@ const StableEdgeVaultApyYear = () => {
           dataKey='timestamp'
           tickFormatter={(unixTime) => convertTimestampToDate(unixTime)}
           tick={{ fontSize: 10 }}
-          interval={30}
+          interval={2}
         />
         <YAxis tickFormatter={(value) => `${value}%`} tick={{ fontSize: 10 }} />
 
@@ -87,10 +85,10 @@ const StableEdgeVaultApyYear = () => {
           content={({ payload }) => {
             if (payload && payload.length > 0) {
               const weeklyValue = payload[0].payload.weekly;
-              const percentage = (
-                (weeklyValue / data[data.length - 1].weekly) *
-                100
-              ).toFixed(2);
+              // const percentage = (
+              //   (weeklyValue / data[data.length - 1].weekly) *
+              //   100
+              // ).toFixed(2);
               const date = formatDate(payload[0].payload.timestamp);
               return (
                 <div
@@ -142,4 +140,4 @@ const StableEdgeVaultApyYear = () => {
   );
 };
 
-export default StableEdgeVaultApyYear;
+export default EtherumEdgeVaultApyMonth;

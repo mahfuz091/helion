@@ -385,11 +385,12 @@ input:focus {
   line-height: 16px; /* 114.286% */
   border-radius: 100px;
   background: #f3f9fd;
-  /* padding: 0px 8px; */
+  padding: 0px 8px;
   width: 48px;
   height: 22px;
   border: none;
   outline: none;
+  position: relative;
 }
 .dark .our_vault .vaults .m_total select {
   background: #33333f;
@@ -810,4 +811,31 @@ class="tw-p-3 tw-whitespace-nowrap tw-text-sm tw-text-black-dark dark:tw-text-wh
   padding: 4px 10px;
   align-items: center;
   gap: 4px;
+}
+
+.custom_select {
+  position: relative;
+  width: 48px;
+}
+
+.custom_select select {
+  width: 100%;
+
+  appearance: none; /* Remove default arrow */
+  /* background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px; */
+}
+
+.custom_select::after {
+  content: "";
+  background: url(/_next/static/media/Vector.cd1e9232.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 8px;
+  height: 4px;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-100%);
 }
