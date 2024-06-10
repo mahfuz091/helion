@@ -335,7 +335,7 @@ const EtherumVault = () => {
             {chartBar ? (
               <EtherumEdgePriceBar period='1d' interval='1h' />
             ) : (
-              <PriceDay />
+              <EtherumEdgePriceDay />
             )}
           </Tab.Pane>
           <Tab.Pane eventKey='priceWeek'>
