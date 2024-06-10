@@ -1,5 +1,5 @@
 "use client";
-import { formatStockData } from "@/utils/formatData";
+
 import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
 import { Area, AreaChart, Tooltip, XAxis, YAxis } from "recharts";
