@@ -1,7 +1,14 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Area, AreaChart, Tooltip, XAxis, YAxis } from "recharts";
+import {
+  Area,
+  AreaChart,
+  Tooltip,
+  XAxis,
+  YAxis,
+  ResponsiveContainer,
+} from "recharts";
 
 const PerpetualPriceDay = () => {
   const [data, setData] = useState([]);

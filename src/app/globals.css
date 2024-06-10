@@ -830,7 +830,7 @@ class="tw-p-3 tw-whitespace-nowrap tw-text-sm tw-text-black-dark dark:tw-text-wh
 
 .custom_select::after {
   content: "";
-  background: url(/_next/static/media/Vector.cd1e9232.svg);
+  background: url(./assets/images/Vector.svg);
   background-repeat: no-repeat;
   position: absolute;
   width: 8px;
@@ -838,4 +838,48 @@ class="tw-p-3 tw-whitespace-nowrap tw-text-sm tw-text-black-dark dark:tw-text-wh
   right: 8px;
   top: 50%;
   transform: translateY(-100%);
+}
+
+@media (max-width: 600px) {
+  .nav {
+    gap: 10px;
+  }
+  .responsive-button {
+    position: relative;
+    font-size: 0; /* Hide the original text by setting font-size to 0 */
+  }
+
+  .responsive-button::after {
+    content: ""; /* Default empty content */
+    font-size: 14px; /* Set the desired font-size for the short text */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .short-text-day::after {
+    content: "1D";
+  }
+  .short-text-week::after {
+    content: "1W";
+  }
+  .short-text-month::after {
+    content: "1M";
+  }
+  .short-text-year::after {
+    content: "1Y";
+  }
+
+  .responsive-button {
+    visibility: hidden;
+  }
+
+  .responsive-button::after {
+    visibility: visible;
+    display: inline-block;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

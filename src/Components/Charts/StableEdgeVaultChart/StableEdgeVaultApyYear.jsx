@@ -63,7 +63,7 @@ const StableEdgeVaultApyYear = () => {
     return `${months[date.getMonth()]} ${date.getFullYear()}`;
   };
 
-  console.log("LL", convertTimestampToDate(1703894400));
+  // console.log("LL", convertTimestampToDate(1703894400));
 
   return (
     <div
