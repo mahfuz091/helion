@@ -967,3 +967,11 @@ class="tw-p-3 tw-whitespace-nowrap tw-text-sm tw-text-black-dark dark:tw-text-wh
 .dark .apexcharts-tooltip .apexcharts-tooltip-series-group.active {
   background: #ffffff !important;
 }
+
+.w-10 {
+  width: 14px;
+}
+.tw-text-blue {
+  --tw-text-opacity: 1;
+  color: rgb(0 160 208 / var(--tw-text-opacity));
+}
