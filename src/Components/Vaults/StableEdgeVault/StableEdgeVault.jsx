@@ -96,7 +96,7 @@ const StableEdgeVault = () => {
       const responseData = await response.json();
 
       // Process the response data
-      console.log(responseData); // Access the specific field from the response
+      // console.log(responseData); // Access the specific field from the response
 
       // Do something with the data...
       // Convert performance metrics to "1d", "1w", "1m", "6m", "1y" format
@@ -144,13 +144,9 @@ const StableEdgeVault = () => {
       const v = formatLargeNumberP(
         parseFloat(responseData.data.fund.totalValue) / 10 ** 18
       );
-      console.log("V", calculatePercentage(1156469104021087516));
 
       // Process the response data
       setM(formattedPerformanceMetrics["1m"]);
-
-      // Process the response data
-      console.log(formattedPerformanceMetrics);
     } catch (error) {
       console.error("Error fetching GraphQL data:", error);
     }
@@ -161,7 +157,7 @@ const StableEdgeVault = () => {
   return (
     <div className='vaults'>
       <div className='d-flex justify-content-between'>
-        <div className='d-flex gap-4 w-100'>
+        <div className='d-flex gap-4 w-100 align-items-start'>
           <img src={img.src} alt='' />
           <h3>Helion StableEdge</h3>
         </div>

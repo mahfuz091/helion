@@ -98,7 +98,7 @@ const EtherumVault = () => {
       const responseData = await response.json();
 
       // Process the response data
-      console.log(responseData); // Access the specific field from the response
+      // console.log(responseData); // Access the specific field from the response
 
       // Do something with the data...
       // Convert performance metrics to "1d", "1w", "1m", "6m", "1y" format
@@ -146,13 +146,13 @@ const EtherumVault = () => {
       const v = formatLargeNumberP(
         parseFloat(responseData.data.fund.totalValue) / 10 ** 18
       );
-      console.log("V", calculatePercentage(1156469104021087516));
+      // console.log("V", calculatePercentage(1156469104021087516));
 
       // Process the response data
       setM(formattedPerformanceMetrics["1m"]);
 
       // Process the response data
-      console.log(formattedPerformanceMetrics);
+      // console.log(formattedPerformanceMetrics);
     } catch (error) {
       console.error("Error fetching GraphQL data:", error);
     }

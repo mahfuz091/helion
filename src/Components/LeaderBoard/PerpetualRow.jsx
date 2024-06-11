@@ -143,17 +143,29 @@ const PerpetualRow = () => {
       <td className='tw-bg-black-medium' style={{ color: "#000" }}>
         ${perpetualVault.managed}
       </td>
-      <td className='tw-bg-black-medium' style={{ color: "#000" }}>
+      <td
+        className='tw-bg-black-medium'
+        style={{ color: perpetualVault.d < 0 ? "#DE0A0A" : "#01A412" }}
+      >
         {perpetualVault.d}
       </td>
-      <td className='tw-bg-black-medium' style={{ color: "#DE0A0A" }}>
+      <td
+        className='tw-bg-black-medium'
+        style={{ color: perpetualVault.w < 0 ? "#DE0A0A" : "#01A412" }}
+      >
         {perpetualVault.w}
       </td>
-      <td className='tw-bg-black-medium' style={{ color: "#000" }}>
+      <td
+        className='tw-bg-black-medium'
+        style={{ color: perpetualVault.m < 0 ? "#DE0A0A" : "#01A412" }}
+      >
         {perpetualVault.m}
       </td>
 
-      <td className='tw-bg-black-medium' style={{ color: "#01A412" }}>
+      <td
+        className='tw-bg-black-medium'
+        style={{ color: perpetualVault.y < 0 ? "#DE0A0A" : "#01A412" }}
+      >
         {perpetualVault.y}
       </td>
       <td

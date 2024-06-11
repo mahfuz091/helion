@@ -1,15 +1,18 @@
 "use client";
 
 import axios from "axios";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 
 // import ReactApexChart from "react-apexcharts";
 import dynamic from "next/dynamic";
+import { ThemeContext } from "@/ThemeProvider/ThemeProvider";
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
 
 const PerpetualPriceBar = ({ period, interval }) => {
+  const { theme, setTheme } = useContext(ThemeContext);
+
   const [data, setData] = useState([]);
   const [minTokenPrice, setMinTokenPrice] = useState(null); // State to store the minimum token price
   // console.log(data);
@@ -94,11 +97,19 @@ const PerpetualPriceBar = ({ period, interval }) => {
           const month = date.toLocaleString("default", { month: "short" });
           return `${day} ${month}`;
         },
+        style: {
+          colors: theme === "dark" ? "#fff" : "#000",
+        },
       },
     },
     yaxis: {
       tooltip: {
         enabled: true,
+      },
+      labels: {
+        style: {
+          colors: theme === "dark" ? "#fff" : "#000",
+        },
       },
     },
     tooltip: {
@@ -190,6 +201,7 @@ const PerpetualPriceBar = ({ period, interval }) => {
         overflowX: "auto",
         overflowY: "hidden",
       }}
+      className='candle_chart'
     >
       <ReactApexChart
         options={options}

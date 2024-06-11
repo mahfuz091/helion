@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext, useState } from "react";
 import { Button, Container, Modal, Offcanvas } from "react-bootstrap";
-import main_logo from "../../app/assets/images/main-logo.png";
+import main_logo from "../../app/assets/images/main-logo.svg";
 import DarkMode from "../DarkMode/DarkMode";
 import { RxHamburgerMenu } from "react-icons/rx";
 import light_logo from "../../app/assets/images/footer_logo.png";
@@ -35,7 +35,11 @@ const Header = () => {
             </Link>
           ) : (
             <Link href='/'>
-              <img src={main_logo.src} alt='main_logo' />
+              <img
+                style={{ width: "130px" }}
+                src={main_logo.src}
+                alt='main_logo'
+              />
             </Link>
           )}
           {/* <img src={main_logo.src} alt='main_logo' /> */}
@@ -60,7 +64,11 @@ const Header = () => {
         <Offcanvas show={show} onHide={handleClose}>
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>
-              <img src={main_logo.src} alt='main_logo' />
+              <img
+                style={{ width: "130px" }}
+                src={main_logo.src}
+                alt='main_logo'
+              />
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>

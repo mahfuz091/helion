@@ -64,7 +64,6 @@ const EtherumEdgePriceMonth = () => {
   //     return date.toLocaleDateString("en-US", options);
   //   };
   const formatDate = (timestamp) => {
-    // console.log(typeof timestamp);
     const num = parseFloat(timestamp);
     const date = new Date(num);
     const options = {
@@ -98,8 +97,6 @@ const EtherumEdgePriceMonth = () => {
     return `${date.getDate()} ${months[date.getMonth()]}`;
   };
 
-  // console.log("PP", formatDate(1715095800000));
-
   return (
     <div
       style={{
@@ -125,7 +122,6 @@ const EtherumEdgePriceMonth = () => {
           content={({ payload }) => {
             if (payload && payload.length > 0) {
               const tokenPrice = payload[0].payload.adjustedTokenPrice;
-              // console.log((parseFloat(tokenPrice) + 1).toFixed(4));
 
               const date = formatDate(payload[0].payload.timestamp);
 

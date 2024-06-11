@@ -72,17 +72,25 @@ input:focus {
 
 .header {
   padding: 24px 0;
-  /* position: relative;
-  z-index: 99999; */
 }
-.header .container .d-flex.align-items-center.gap-4 {
+
+/* .header .container .d-flex.align-items-center.gap-4 {
   position: relative;
   z-index: 99999;
-}
+} */
+
 .header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 20;
+}
+
+@media (min-width: 768px) {
+  .header .container {
+    z-index: 999999;
+  }
 }
 .header .main_menu a {
   color: var(--Primary-Color-400-Main, #38b6ff);
@@ -448,6 +456,28 @@ input:focus {
   display: flex;
   gap: 8px;
 }
+.dark
+  .our_vault
+  .vaults
+  .pool_btn_group
+  .btn_pool
+  button.active.cursor-pointer
+  svg
+  path {
+  fill: #fff;
+}
+.dark .our_vault .vaults .pool_btn_group .btn_pool button.active svg path {
+  fill: #fff;
+}
+
+@media (max-width: 640px) {
+  .our_vault .vaults .pool_btn_group .btn_pool {
+    margin-top: 8px;
+  }
+  .our_vault .vaults h3 {
+    font-size: 18px;
+  }
+}
 .our_vault .vaults .pool_btn_group button {
   border: none;
   outline: none;
@@ -484,6 +514,7 @@ input:focus {
   }
   .our_vault .container h2 {
     margin-bottom: 30px;
+    font-size: 40px;
   }
 }
 @media (min-width: 640px) {
@@ -511,6 +542,19 @@ input:focus {
   font-weight: 700;
   line-height: 60px; /* 120% */
   margin-bottom: 65px;
+}
+
+.dark .leader_table tbody td:nth-child(3) {
+  color: #fff !important;
+}
+.dark .leader_table tbody td:nth-child(8) {
+  color: #fff !important;
+}
+
+@media (max-width: 575px) {
+  .leader_board .container h2 {
+    font-size: 40px;
+  }
 }
 .leader_board .btn_all {
   border: 5px solid #f1f1f1;
@@ -657,6 +701,12 @@ input:focus {
   }
 }
 
+@media (max-width: 575px) {
+  .our_products .container h2 {
+    font-size: 40px;
+  }
+}
+
 /* -------------------
       Footer
 -------------------- */
@@ -693,6 +743,7 @@ input:focus {
   margin-top: 30px;
   margin-bottom: 20px;
 }
+
 .footer .socials {
   display: flex;
   align-items: center;
@@ -769,6 +820,18 @@ input:focus {
   .footer_line {
     margin-top: 30px;
   }
+  .footer .container p {
+    font-size: 14px;
+  }
+  .footer .container ul li a {
+    font-size: 14px;
+  }
+  .footer ul.pages li {
+    margin-bottom: 10px;
+  }
+  .footer ul.links li {
+    margin-bottom: 10px;
+  }
 }
 
 /*  */
@@ -811,6 +874,19 @@ class="tw-p-3 tw-whitespace-nowrap tw-text-sm tw-text-black-dark dark:tw-text-wh
   padding: 4px 10px;
   align-items: center;
   gap: 4px;
+}
+
+.dark .nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background: #33333f;
+}
+
+.dark .apexcharts-canvas {
+  background: #202428;
+}
+
+.dark .candle_chart {
+  background: #202428 !important;
 }
 
 .custom_select {
@@ -882,4 +958,12 @@ class="tw-p-3 tw-whitespace-nowrap tw-text-sm tw-text-black-dark dark:tw-text-wh
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.dark .apexcharts-tooltip {
+  color: #000000;
+}
+
+.dark .apexcharts-tooltip .apexcharts-tooltip-series-group.active {
+  background: #ffffff !important;
 }

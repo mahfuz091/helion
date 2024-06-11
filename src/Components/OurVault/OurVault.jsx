@@ -27,9 +27,9 @@ const OurVault = () => {
           <Col xs={12} lg={6}>
             <StableEdgeVault />
           </Col>
-          <Col xs={12} lg={6}>
+          {/* <Col xs={12} lg={6}>
             <EtherumVault />
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </div>

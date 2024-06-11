@@ -94,9 +94,6 @@ const PerpetualVault = () => {
       const response = await fetch(apiEndpoint, requestOptions);
       const responseData = await response.json();
 
-      // Process the response data
-      console.log(responseData); // Access the specific field from the response
-
       // Do something with the data...
       // Convert performance metrics to "1d", "1w", "1m", "6m", "1y" format
       const performanceMetrics = responseData.data.fund.performanceMetrics;
@@ -147,9 +144,6 @@ const PerpetualVault = () => {
 
       // Process the response data
       setM(formattedPerformanceMetrics["1m"]);
-
-      // Process the response data
-      console.log(formattedPerformanceMetrics);
     } catch (error) {
       console.error("Error fetching GraphQL data:", error);
     }
@@ -160,7 +154,7 @@ const PerpetualVault = () => {
   return (
     <div className='vaults'>
       <div className='d-flex justify-content-between'>
-        <div className='d-flex gap-4 w-100'>
+        <div className='d-flex gap-4 w-100 align-items-start'>
           <img src={img.src} alt='' />
           <h3>Helion Perpetual Neutral Edge</h3>
         </div>

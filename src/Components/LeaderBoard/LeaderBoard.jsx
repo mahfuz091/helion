@@ -14,7 +14,7 @@ const LeaderBoard = () => {
 
   const [etherumEdgeVault, setEtherumEdgeVault] = useState([]);
 
-  console.log(innoVault?.d);
+  // console.log(innoVault?.d);
 
   const fetchInnoVaultData = async () => {
     const apiEndpoint = "https://api-v2.dhedge.org/graphql";
@@ -122,7 +122,7 @@ const LeaderBoard = () => {
         managed: formatLargeNumber(responseData.data.fund.totalValue),
       };
 
-      console.log(data.performanceMetrics);
+      // console.log(data.performanceMetrics);
 
       setInnoVault(data);
     } catch (error) {
@@ -159,28 +159,28 @@ const LeaderBoard = () => {
             </svg>
           </div>
         </div>
-        <div className='table-responsive'>
+        <div className='table-responsive leader_table'>
           <table className='table'>
             <thead>
               <tr>
                 <th scope='col'>Network</th>
                 <th scope='col'>Vault</th>
-                <th scope='col'>
+                <th scope='col' style={{ minWidth: "150px" }}>
                   Managed <img src={arrow.src} alt='' />
                 </th>
-                <th scope='col'>
+                <th scope='col style={{ minWidth: "120px" }}'>
                   1D <img src={arrow.src} alt='' />
                 </th>
-                <th scope='col'>
+                <th scope='col' style={{ minWidth: "120px" }}>
                   1W <img src={arrow.src} alt='' />
                 </th>
-                <th scope='col'>
+                <th scope='col' style={{ minWidth: "120px" }}>
                   1M <img src={arrow.src} alt='' />
                 </th>
-                <th scope='col'>
+                <th scope='col' style={{ minWidth: "120px" }}>
                   1Y <img src={arrow.src} alt='' />
                 </th>
-                <th scope='col'>
+                <th scope='col' style={{ minWidth: "120px" }}>
                   Total <img src={arrow.src} alt='' />
                 </th>
               </tr>
@@ -205,17 +205,29 @@ const LeaderBoard = () => {
                 <td className='tw-bg-black-medium' style={{ color: "#000" }}>
                   ${innoVault.managed}
                 </td>
-                <td className='tw-bg-black-medium' style={{ color: "#000" }}>
+                <td
+                  className='tw-bg-black-medium'
+                  style={{ color: innoVault.d < 0 ? "#DE0A0A" : "#01A412" }}
+                >
                   {innoVault.d}
                 </td>
-                <td className='tw-bg-black-medium' style={{ color: "#DE0A0A" }}>
+                <td
+                  className='tw-bg-black-medium'
+                  style={{ color: innoVault.w < 0 ? "#DE0A0A" : "#01A412" }}
+                >
                   {innoVault.w}
                 </td>
-                <td className='tw-bg-black-medium' style={{ color: "#000" }}>
+                <td
+                  className='tw-bg-black-medium'
+                  style={{ color: innoVault.m < 0 ? "#DE0A0A" : "#01A412" }}
+                >
                   {innoVault.m}
                 </td>
 
-                <td className='tw-bg-black-medium' style={{ color: "#01A412" }}>
+                <td
+                  className='tw-bg-black-medium'
+                  style={{ color: innoVault.y < 0 ? "#DE0A0A" : "#01A412" }}
+                >
                   {innoVault.y}
                 </td>
                 <td
@@ -238,7 +250,7 @@ const LeaderBoard = () => {
               </tr>
               <PerpetualRow />
               <StableEdgeRow />
-              <EtherumEdgeRow />
+              {/* <EtherumEdgeRow /> */}
             </tbody>
           </table>
         </div>

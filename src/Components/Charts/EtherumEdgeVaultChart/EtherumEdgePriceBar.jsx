@@ -11,7 +11,7 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
 const EtherumEdgePriceBar = ({ period, interval }) => {
   const [data, setData] = useState([]);
   const [minTokenPrice, setMinTokenPrice] = useState(null); // State to store the minimum token price
-  // console.log(data);
+
   const fetchData = async () => {
     const query = `
       query GetTokenPriceCandles($address: String!, $period: String!, $interval: String) {

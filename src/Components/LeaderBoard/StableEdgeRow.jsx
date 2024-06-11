@@ -143,17 +143,29 @@ const StableEdgeRow = () => {
       <td className='tw-bg-black-medium' style={{ color: "#000" }}>
         ${stableEdgeVault.managed}
       </td>
-      <td className='tw-bg-black-medium' style={{ color: "#000" }}>
+      <td
+        className='tw-bg-black-medium'
+        style={{ color: stableEdgeVault.d < 0 ? "#DE0A0A" : "#01A412" }}
+      >
         {stableEdgeVault.d}
       </td>
-      <td className='tw-bg-black-medium' style={{ color: "#DE0A0A" }}>
+      <td
+        className='tw-bg-black-medium'
+        style={{ color: stableEdgeVault.w < 0 ? "#DE0A0A" : "#01A412" }}
+      >
         {stableEdgeVault.w}
       </td>
-      <td className='tw-bg-black-medium' style={{ color: "#000" }}>
+      <td
+        className='tw-bg-black-medium'
+        style={{ color: stableEdgeVault.m < 0 ? "#DE0A0A" : "#01A412" }}
+      >
         {stableEdgeVault.m}
       </td>
 
-      <td className='tw-bg-black-medium' style={{ color: "#01A412" }}>
+      <td
+        className='tw-bg-black-medium'
+        style={{ color: stableEdgeVault.y < 0 ? "#DE0A0A" : "#01A412" }}
+      >
         {stableEdgeVault.y}
       </td>
       <td
