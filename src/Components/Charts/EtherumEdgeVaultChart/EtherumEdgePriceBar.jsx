@@ -2,9 +2,12 @@
 
 import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
-import { Area, AreaChart, Tooltip, XAxis, YAxis } from "recharts";
-import ReactApexChart from "react-apexcharts";
 
+// import ReactApexChart from "react-apexcharts";
+import dynamic from "next/dynamic";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 const EtherumEdgePriceBar = ({ period, interval }) => {
   const [data, setData] = useState([]);
   const [minTokenPrice, setMinTokenPrice] = useState(null); // State to store the minimum token price
@@ -77,7 +80,7 @@ const EtherumEdgePriceBar = ({ period, interval }) => {
       type: "candlestick",
       height: 250,
       toolbar: {
-        show: false, // Hide the toolbar
+        show: false,
       },
     },
 

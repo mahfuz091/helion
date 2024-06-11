@@ -2,8 +2,12 @@
 
 import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
-import { Area, AreaChart, Tooltip, XAxis, YAxis } from "recharts";
-import ReactApexChart from "react-apexcharts";
+
+// import ReactApexChart from "react-apexcharts";
+import dynamic from "next/dynamic";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 
 const PerpetualPriceBar = ({ period, interval }) => {
   const [data, setData] = useState([]);
