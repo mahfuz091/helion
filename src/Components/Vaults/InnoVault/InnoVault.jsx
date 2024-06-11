@@ -148,10 +148,6 @@ const InnoVault = () => {
       const v = formatLargeNumberP(
         parseFloat(responseData.data.fund.totalValue) / 10 ** 18
       );
-      console.log("V", calculatePercentage(1156469104021087516));
-
-      // Process the response data
-      console.log(formattedPerformanceMetrics);
 
       // Process the response data
       setM(formattedPerformanceMetrics["1m"]);
