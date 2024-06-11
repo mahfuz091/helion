@@ -155,7 +155,7 @@ const PerpetualVault = () => {
     <div className='vaults'>
       <div className='d-flex justify-content-between'>
         <div className='d-flex gap-4 w-100 align-items-start'>
-          <img src={img.src} alt='' />
+          {/* <img src={img.src} alt='' /> */}
           <h3>Helion Perpetual Neutral Edge</h3>
         </div>
         <div>
@@ -218,9 +218,7 @@ const PerpetualVault = () => {
                   .slice(0, 9)}
               </p>
             </div>
-            <div className='w-33'>
-              <img src={img_1.src} alt='' />
-            </div>
+            <div className='w-33'>{/* <img src={img_1.src} alt='' /> */}</div>
           </div>
         </div>
       </div>

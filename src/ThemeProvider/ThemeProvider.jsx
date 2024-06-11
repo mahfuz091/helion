@@ -1,6 +1,8 @@
 "use client";
 import React, { createContext, useState, useEffect } from "react";
-
+import inno from "../app/assets/images/inno.png";
+import perpetual from "../app/assets/images/perpetual.png";
+import stable from "../app/assets/images/stable.png";
 export const ThemeContext = createContext(null);
 const ThemeProvider = ({ children }) => {
   const getInitialTheme = () => {
@@ -118,6 +120,7 @@ const ThemeProvider = ({ children }) => {
         total: calculatePercentage(responseData.data.fund.tokenPrice),
         managed: responseData.data.fund.totalValue,
         name: "Helion InnoVault",
+        image: inno,
       };
 
       // console.log(data.performanceMetrics);
@@ -233,6 +236,7 @@ const ThemeProvider = ({ children }) => {
         total: calculatePercentage(responseData.data.fund.tokenPrice),
         managed: responseData.data.fund.totalValue,
         name: "Helion Perpetual Neutral Edge",
+        image: perpetual,
       };
 
       //   console.log(data.performanceMetrics);
@@ -348,6 +352,7 @@ const ThemeProvider = ({ children }) => {
         total: calculatePercentage(responseData.data.fund.tokenPrice),
         managed: responseData.data.fund.totalValue,
         name: "Helion StableEdge",
+        image: stable,
       };
 
       //   console.log(data.performanceMetrics);

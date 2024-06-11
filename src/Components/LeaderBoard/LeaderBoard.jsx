@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import arrow from "../../app/assets/images/fi_271228.png";
 import network from "../../app/assets/images/Rectangle 3467615.png";
-import vault from "../../app/assets/images/image 888.png";
+// import vault from "../../app/assets/images/image 888.png";
 
 import { ThemeContext } from "@/ThemeProvider/ThemeProvider";
 
@@ -627,7 +627,7 @@ const LeaderBoard = () => {
                     style={{ display: "flex", gap: "10px" }}
                   >
                     <div>
-                      <img src={vault.src} alt='' />
+                      <img src={data.image.src} alt='' />
                     </div>
                     <div>
                       <h5>{data.name}</h5>
