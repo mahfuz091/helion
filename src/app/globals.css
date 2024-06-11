@@ -119,6 +119,7 @@ input:focus {
   max-width: 390px;
   z-index: 99999999999;
   position: relative;
+  top: 80px;
 }
 .modal-header {
   border-bottom: none;

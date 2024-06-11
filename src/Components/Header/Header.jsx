@@ -94,7 +94,7 @@ const Header = () => {
         >
           <Modal.Header>
             <img
-              style={{ marginLeft: "auto" }}
+              style={{ marginLeft: "auto", cursor: "pointer" }}
               onClick={handleCloseModal}
               src={close.src}
               alt=''
