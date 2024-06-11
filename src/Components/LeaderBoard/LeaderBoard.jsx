@@ -326,10 +326,18 @@ const LeaderBoard = () => {
               <tr>
                 <th scope='col'>Network</th>
                 <th scope='col'>Vault</th>
-                <th scope='col' style={{ minWidth: "150px" }}>
+                <th
+                  scope='col'
+                  style={{ minWidth: "150px" }}
+                  className='cursor-pointer'
+                  onClick={() => {
+                    toggleSortDirection();
+                    sortDataByManaged();
+                  }}
+                >
                   Managed{" "}
-                  {sortByManaged.active &&
-                    (sortByManaged.ascending ? (
+                  {sortByManaged.active ? (
+                    sortByManaged.ascending ? (
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
@@ -361,20 +369,23 @@ const LeaderBoard = () => {
                           d='M12 19.5v-15m0 0-6.75 6.75M12 4.5l6.75 6.75'
                         ></path>
                       </svg>
-                    ))}
-                  <img
-                    src={arrow.src}
-                    alt=''
-                    onClick={() => {
-                      toggleSortDirection();
-                      sortDataByManaged();
-                    }}
-                  />
+                    )
+                  ) : (
+                    <img src={arrow.src} alt='' />
+                  )}
                 </th>
-                <th scope='col style={{ minWidth: "150px" }}'>
+                <th
+                  scope='col'
+                  style={{ minWidth: "150px" }}
+                  className='cursor-pointer'
+                  onClick={() => {
+                    toggleSortDirectionD();
+                    sortDataByD();
+                  }}
+                >
                   1D{" "}
-                  {sortByD.active &&
-                    (sortByD.ascending ? (
+                  {sortByD.active ? (
+                    sortByD.ascending ? (
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
@@ -406,20 +417,23 @@ const LeaderBoard = () => {
                           d='M12 19.5v-15m0 0-6.75 6.75M12 4.5l6.75 6.75'
                         ></path>
                       </svg>
-                    ))}
-                  <img
-                    src={arrow.src}
-                    alt=''
-                    onClick={() => {
-                      toggleSortDirectionD();
-                      sortDataByD();
-                    }}
-                  />
+                    )
+                  ) : (
+                    <img src={arrow.src} alt='' />
+                  )}
                 </th>
-                <th scope='col' style={{ minWidth: "120px" }}>
+                <th
+                  scope='col'
+                  style={{ minWidth: "120px" }}
+                  className='cursor-pointer'
+                  onClick={() => {
+                    toggleSortDirectionW();
+                    sortDataByW();
+                  }}
+                >
                   1W{" "}
-                  {sortByW.active &&
-                    (sortByW.ascending ? (
+                  {sortByW.active ? (
+                    sortByW.ascending ? (
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
@@ -451,20 +465,23 @@ const LeaderBoard = () => {
                           d='M12 19.5v-15m0 0-6.75 6.75M12 4.5l6.75 6.75'
                         ></path>
                       </svg>
-                    ))}
-                  <img
-                    src={arrow.src}
-                    alt=''
-                    onClick={() => {
-                      toggleSortDirectionW();
-                      sortDataByW();
-                    }}
-                  />
+                    )
+                  ) : (
+                    <img src={arrow.src} alt='' />
+                  )}
                 </th>
-                <th scope='col' style={{ minWidth: "120px" }}>
+                <th
+                  scope='col'
+                  style={{ minWidth: "120px" }}
+                  className='cursor-pointer'
+                  onClick={() => {
+                    toggleSortDirectionM();
+                    sortDataByM();
+                  }}
+                >
                   1M{" "}
-                  {sortByM.active &&
-                    (sortByM.ascending ? (
+                  {sortByM.active ? (
+                    sortByM.ascending ? (
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
@@ -496,20 +513,23 @@ const LeaderBoard = () => {
                           d='M12 19.5v-15m0 0-6.75 6.75M12 4.5l6.75 6.75'
                         ></path>
                       </svg>
-                    ))}
-                  <img
-                    src={arrow.src}
-                    alt=''
-                    onClick={() => {
-                      toggleSortDirectionM();
-                      sortDataByM();
-                    }}
-                  />
+                    )
+                  ) : (
+                    <img src={arrow.src} alt='' />
+                  )}
                 </th>
-                <th scope='col' style={{ minWidth: "120px" }}>
+                <th
+                  scope='col'
+                  style={{ minWidth: "120px" }}
+                  className='cursor-pointer'
+                  onClick={() => {
+                    toggleSortDirectionY();
+                    sortDataByY();
+                  }}
+                >
                   1Y{" "}
-                  {sortByY.active &&
-                    (sortByY.ascending ? (
+                  {sortByY.active ? (
+                    sortByY.ascending ? (
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
@@ -541,20 +561,23 @@ const LeaderBoard = () => {
                           d='M12 19.5v-15m0 0-6.75 6.75M12 4.5l6.75 6.75'
                         ></path>
                       </svg>
-                    ))}
-                  <img
-                    src={arrow.src}
-                    alt=''
-                    onClick={() => {
-                      toggleSortDirectionY();
-                      sortDataByY();
-                    }}
-                  />
+                    )
+                  ) : (
+                    <img src={arrow.src} alt='' />
+                  )}
                 </th>
-                <th scope='col' style={{ minWidth: "120px" }}>
+                <th
+                  scope='col'
+                  style={{ minWidth: "120px" }}
+                  className='cursor-pointer'
+                  onClick={() => {
+                    toggleSortDirectionT();
+                    sortDataByT();
+                  }}
+                >
                   Total{" "}
-                  {sortByT.active &&
-                    (sortByT.ascending ? (
+                  {sortByT.active ? (
+                    sortByT.ascending ? (
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
@@ -586,15 +609,10 @@ const LeaderBoard = () => {
                           d='M12 19.5v-15m0 0-6.75 6.75M12 4.5l6.75 6.75'
                         ></path>
                       </svg>
-                    ))}
-                  <img
-                    src={arrow.src}
-                    alt=''
-                    onClick={() => {
-                      toggleSortDirectionT();
-                      sortDataByT();
-                    }}
-                  />
+                    )
+                  ) : (
+                    <img src={arrow.src} alt='' />
+                  )}
                 </th>
               </tr>
             </thead>
