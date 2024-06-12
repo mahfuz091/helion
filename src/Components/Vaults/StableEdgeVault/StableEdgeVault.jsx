@@ -20,7 +20,7 @@ const StableEdgeVault = () => {
   const [apyP, setApyP] = useState(vaultApy.monthly);
   const [m, setM] = useState(null);
 
-  const [chartBar, setChartBar] = useState(true);
+  const [chartBar, setChartBar] = useState(false);
   useEffect(() => {
     setApyP(vaultApy.monthly);
   }, [vaultApy]);
@@ -296,7 +296,7 @@ const StableEdgeVault = () => {
           <div className='btn_pool'>
             {apy ? null : (
               <button
-                className={`${chartBar ? "active" : ""}  cursor-pointer`}
+                className={`${chartBar ? "active" : "as"}  cursor-pointer`}
                 onClick={toggleChartBar}
               >
                 <svg
@@ -313,7 +313,7 @@ const StableEdgeVault = () => {
                 </svg>
               </button>
             )}
-            <button className='active'>
+            <button className='active d-none'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='16'

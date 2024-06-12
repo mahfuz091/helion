@@ -501,6 +501,14 @@ input:focus {
   align-items: center;
   gap: 4px;
 }
+.as {
+  border-radius: 100px;
+  background: transparent;
+  display: flex;
+  padding: 4px 10px;
+  align-items: center;
+  gap: 4px;
+}
 .dark .our_vault .vaults .pool_btn_group button.active {
   background: #33333f;
 }

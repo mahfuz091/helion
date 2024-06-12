@@ -26,7 +26,7 @@ const InnoVault = () => {
     setApyP(vaultApy.monthly);
   }, [vaultApy]);
 
-  const [chartBar, setChartBar] = useState(true);
+  const [chartBar, setChartBar] = useState(false);
 
   const toggleChartBar = () => {
     setChartBar(!chartBar);
@@ -297,7 +297,7 @@ const InnoVault = () => {
           <div className='btn_pool'>
             {apy ? null : (
               <button
-                className={`${chartBar ? "active" : ""}  cursor-pointer`}
+                className={`${chartBar ? "active" : "as"}  cursor-pointer`}
                 onClick={toggleChartBar}
               >
                 <svg
@@ -314,7 +314,7 @@ const InnoVault = () => {
                 </svg>
               </button>
             )}
-            <button className='active'>
+            <button className='active d-none'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='16'

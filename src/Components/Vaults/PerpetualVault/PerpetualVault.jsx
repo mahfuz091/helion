@@ -18,7 +18,7 @@ const PerpetualVault = () => {
   const [price, setPrice] = useState(true);
   const [apy, setApy] = useState(false);
   const [apyP, setApyP] = useState(vaultApy.monthly);
-  const [chartBar, setChartBar] = useState(true);
+  const [chartBar, setChartBar] = useState(false);
   const [m, setM] = useState(null);
   useEffect(() => {
     setApyP(vaultApy.monthly);
@@ -293,7 +293,7 @@ const PerpetualVault = () => {
           <div className='btn_pool'>
             {apy ? null : (
               <button
-                className={`${chartBar ? "active" : ""}  cursor-pointer`}
+                className={`${chartBar ? "active" : "as"}  cursor-pointer`}
                 onClick={toggleChartBar}
               >
                 <svg
@@ -310,7 +310,7 @@ const PerpetualVault = () => {
                 </svg>
               </button>
             )}
-            <button className='active'>
+            <button className='active d-none'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='16'

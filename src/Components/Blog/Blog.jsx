@@ -13,12 +13,21 @@ const Blog = () => {
           tailored to meet the needs of both novice and experienced investors.
         </p>
         <p>
+          The Annual Percentage Yield (APY) Is Extrapolated From The Previous
+          Week.
+        </p>
+        <p>
           Our automated strategies leverage advanced analytics and real-time
           data to ensure optimal performance across various market conditions.
           By partnering with Helion EDGE, you gain access to meticulously
           crafted strategies that are rigorously tested and continuously
           optimized for maximum profitability.
         </p>
+        <p>
+          The APY And Price Chart You See Have Already Taken All Fees Into
+          Account.
+        </p>
+
         <p>
           Let us handle the complexity of DeFi yield farming so you can focus on
           making strategic decisions and achieving your financial objectives.
