@@ -212,11 +212,23 @@ const InnoVault = () => {
             </div>
             <div className='line'></div>
             <div>
-              <p style={{ lineHeight: "160%" }}>
+              <p
+                style={{
+                  lineHeight: "160%",
+                  fontSize: "12px",
+                  marginBottom: "10px",
+                }}
+              >
                 The Annual Percentage Yield (APY) Is Extrapolated From The
                 Previous Week.
               </p>
-              <p style={{ lineHeight: "160%" }}>
+              <p
+                style={{
+                  lineHeight: "160%",
+                  fontSize: "12px",
+                  marginBottom: "10px",
+                }}
+              >
                 The APY And Price Chart You See Have Already Taken All Fees Into
                 Account.
               </p>
