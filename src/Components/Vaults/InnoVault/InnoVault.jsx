@@ -195,18 +195,30 @@ const InnoVault = () => {
           <p>{m}% 1M</p>
         </div>
         <div className='m_total'>
-          <div className='m_total-head'>
-            <p>APY</p>
-            <div className='custom_select'>
-              <select
-                onChange={handleSelectChange}
-                name=''
-                id=''
-                defaultValue={apyP}
-              >
-                <option value={vaultApy.monthly}>1M </option>
-                <option value={vaultApy.weekly}>1W </option>
-              </select>
+          <div className='m_total-head d-md-flex align-items-start'>
+            <div className='d-flex'>
+              <p>APY</p>
+              <div className='custom_select'>
+                <select
+                  onChange={handleSelectChange}
+                  name=''
+                  id=''
+                  defaultValue={apyP}
+                >
+                  <option value={vaultApy.monthly}>1M </option>
+                  <option value={vaultApy.weekly}>1W </option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <p>
+                The Annual Percentage Yield (APY) Is Extrapolated From The
+                Previous Week.
+              </p>
+              <p>
+                The APY And Price Chart You See Have Already Taken All Fees Into
+                Account.
+              </p>
             </div>
           </div>
           <div className='pool-stats d-flex '>

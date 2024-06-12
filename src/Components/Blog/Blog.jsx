@@ -6,26 +6,19 @@ const Blog = () => {
     <div className='blog'>
       <Container>
         <h2>Seamless Yield Automation</h2>
-        <p>
+        <p className='mb-1'>
           At Helion EDGE, we specialize in delivering top-tier automated DeFi
           yield strategies designed to enhance your investment performance. Our
           expert team develops and curates a diverse range of algorithms
           tailored to meet the needs of both novice and experienced investors.
         </p>
-        <p>
-          The Annual Percentage Yield (APY) Is Extrapolated From The Previous
-          Week.
-        </p>
-        <p>
+
+        <p className='mb-1'>
           Our automated strategies leverage advanced analytics and real-time
           data to ensure optimal performance across various market conditions.
           By partnering with Helion EDGE, you gain access to meticulously
           crafted strategies that are rigorously tested and continuously
           optimized for maximum profitability.
-        </p>
-        <p>
-          The APY And Price Chart You See Have Already Taken All Fees Into
-          Account.
         </p>
 
         <p>

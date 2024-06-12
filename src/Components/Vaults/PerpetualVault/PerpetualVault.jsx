@@ -192,25 +192,37 @@ const PerpetualVault = () => {
           <p>{m}% 1M</p>
         </div>
         <div className='m_total'>
-          <div className='m_total-head'>
-            <p>APY</p>
-            <div className='custom_select'>
-              <select
-                onChange={handleSelectChange}
-                name=''
-                id=''
-                defaultValue={apyP}
-              >
-                <option value={vaultApy.monthly}>1M </option>
-                <option value={vaultApy.weekly}>1W </option>
-              </select>
+          <div className='m_total-head d-md-flex align-items-start'>
+            <div className='d-flex'>
+              <p>APY</p>
+              <div className='custom_select'>
+                <select
+                  onChange={handleSelectChange}
+                  name=''
+                  id=''
+                  defaultValue={apyP}
+                >
+                  <option value={vaultApy.monthly}>1M </option>
+                  <option value={vaultApy.weekly}>1W </option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <p>
+                The Annual Percentage Yield (APY) Is Extrapolated From The
+                Previous Week.
+              </p>
+              <p>
+                The APY And Price Chart You See Have Already Taken All Fees Into
+                Account.
+              </p>
             </div>
           </div>
           <div className='pool-stats d-flex '>
             <div className='w-33'>
               <p>{apyP} %</p>
             </div>
-            <div className='w-33'>
+            <div className='w-33 d-none'>
               <p className='d-none'>
                 $
                 {String(tvl)
@@ -218,7 +230,9 @@ const PerpetualVault = () => {
                   .slice(0, 9)}
               </p>
             </div>
-            <div className='w-33'>{/* <img src={img_1.src} alt='' /> */}</div>
+            <div className='w-33 d-none'>
+              {/* <img src={img_1.src} alt='' /> */}
+            </div>
           </div>
         </div>
       </div>

@@ -354,7 +354,7 @@ input:focus {
   color: #fff;
 }
 .our_vault .vaults .m_percentage {
-  padding: 16px 50px 45px 16px;
+  padding: 30px 50px 125px 16px;
   width: 40%;
   border-radius: 8px;
   border: 1px solid rgba(217, 217, 217, 0.4);
@@ -418,7 +418,7 @@ input:focus {
 .our_vault .vaults .m_total-head {
   padding: 14px 35px 13.5px 19px;
   background: #d6f0ff;
-  display: flex;
+
   gap: 8px;
 }
 .dark .our_vault .vaults .m_total-head {

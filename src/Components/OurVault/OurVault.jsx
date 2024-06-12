@@ -18,13 +18,13 @@ const OurVault = () => {
       <Container>
         <h2>Our Vaults</h2>
         <Row className='vault_row'>
-          <Col xs={12} lg={6}>
+          <Col xs={12} xl={6}>
             <InnoVault />
           </Col>
-          <Col xs={12} lg={6}>
+          <Col xs={12} xl={6}>
             <PerpetualVault />
           </Col>
-          <Col xs={12} lg={6}>
+          <Col xs={12} xl={6}>
             <StableEdgeVault />
           </Col>
           {/* <Col xs={12} lg={6}>
