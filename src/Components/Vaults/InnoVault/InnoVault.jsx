@@ -214,7 +214,7 @@ const InnoVault = () => {
               <p>{apyP} %</p>
             </div>
             <div className='w-33'>
-              <p>
+              <p className='d-none'>
                 $
                 {tvl
                   .toString()

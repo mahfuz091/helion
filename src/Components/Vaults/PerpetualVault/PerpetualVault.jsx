@@ -211,7 +211,7 @@ const PerpetualVault = () => {
               <p>{apyP} %</p>
             </div>
             <div className='w-33'>
-              <p>
+              <p className='d-none'>
                 $
                 {String(tvl)
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
