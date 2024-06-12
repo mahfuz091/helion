@@ -229,7 +229,10 @@ const PerpetualVault = () => {
               <button onClick={handlePrice} className={price ? "active" : ""}>
                 Price
               </button>
-              <button onClick={handleApy} className={apy ? "active" : ""}>
+              <button
+                onClick={handleApy}
+                className={apy ? "active d-none" : "d-none"}
+              >
                 APY
               </button>
             </div>
@@ -321,7 +324,7 @@ const PerpetualVault = () => {
                 />
               </svg>
             </button>
-            <button className='active'>1d</button>
+            <button className='active d-none'>1d</button>
           </div>
         </div>
         <Tab.Content>

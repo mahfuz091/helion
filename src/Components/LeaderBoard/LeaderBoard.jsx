@@ -329,7 +329,7 @@ const LeaderBoard = () => {
                 <th
                   scope='col'
                   style={{ minWidth: "150px" }}
-                  className='cursor-pointer'
+                  className='cursor-pointer d-none'
                   onClick={() => {
                     toggleSortDirection();
                     sortDataByManaged();
@@ -569,7 +569,7 @@ const LeaderBoard = () => {
                 <th
                   scope='col'
                   style={{ minWidth: "120px" }}
-                  className='cursor-pointer'
+                  className='cursor-pointer d-none'
                   onClick={() => {
                     toggleSortDirectionT();
                     sortDataByT();
@@ -634,7 +634,10 @@ const LeaderBoard = () => {
                       <p>dHEDGE</p>
                     </div>
                   </td>
-                  <td className='tw-bg-black-medium' style={{ color: "#000" }}>
+                  <td
+                    className='tw-bg-black-medium d-none'
+                    style={{ color: "#000" }}
+                  >
                     ${formatLargeNumber(data.managed)}
                   </td>
                   <td
@@ -674,7 +677,7 @@ const LeaderBoard = () => {
                 tw-rounded-l-lg
                 group-hover:tw-bg-white-dark
                 group-hover:tw-bg-black-light
-                tw-cursor-pointer'
+                tw-cursor-pointer d-none'
                     style={{ color: "#000" }}
                   >
                     {data.total}%
