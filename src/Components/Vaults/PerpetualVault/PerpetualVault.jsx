@@ -192,8 +192,8 @@ const PerpetualVault = () => {
           <p>{m}% 1M</p>
         </div>
         <div className='m_total'>
-          <div className='m_total-head d-md-flex align-items-start'>
-            <div className='d-flex'>
+          <div className='m_total-head '>
+            <div className='d-flex align-items-baseline gap-2'>
               <p>APY</p>
               <div className='custom_select'>
                 <select
@@ -207,12 +207,13 @@ const PerpetualVault = () => {
                 </select>
               </div>
             </div>
+            <div className='line'></div>
             <div>
-              <p>
+              <p style={{ lineHeight: "160%" }}>
                 The Annual Percentage Yield (APY) Is Extrapolated From The
                 Previous Week.
               </p>
-              <p>
+              <p style={{ lineHeight: "160%" }}>
                 The APY And Price Chart You See Have Already Taken All Fees Into
                 Account.
               </p>

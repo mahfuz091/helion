@@ -354,7 +354,7 @@ input:focus {
   color: #fff;
 }
 .our_vault .vaults .m_percentage {
-  padding: 30px 50px 125px 16px;
+  padding: 30px 50px 173px 16px;
   width: 40%;
   border-radius: 8px;
   border: 1px solid rgba(217, 217, 217, 0.4);
@@ -514,9 +514,15 @@ input:focus {
   background: #33333f;
 }
 
+@media (max-width: 1024px) {
+  .our_vault .vaults .m_percentage {
+    padding: 30px 38px 175px 16px;
+  }
+}
+
 @media (max-width: 575px) {
   .our_vault .vaults .m_percentage {
-    padding: 16px 38px 45px 16px;
+    padding: 30px 38px 260px 16px;
   }
   .our_vault {
     padding: 50px 0;
@@ -921,8 +927,15 @@ class="tw-p-3 tw-whitespace-nowrap tw-text-sm tw-text-black-dark dark:tw-text-wh
   width: 8px;
   height: 4px;
   right: 8px;
-  top: 50%;
+  top: 62%;
   transform: translateY(-100%);
+}
+
+.line {
+  height: 1px;
+  background-color: rgba(153, 151, 151, 0.5);
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 @media (max-width: 600px) {
