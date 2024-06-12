@@ -213,7 +213,7 @@ const InnoVault = () => {
             <div className='w-33'>
               <p>{apyP} %</p>
             </div>
-            <div className='w-33'>
+            {/* <div className='w-33'>
               <p className='d-none'>
                 $
                 {tvl
@@ -221,8 +221,8 @@ const InnoVault = () => {
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                   .slice(0, 7)}
               </p>
-            </div>
-            <div className='w-33'> {/* <img src={img_1.src} alt='' /> */} </div>
+            </div> */}
+            {/* <div className='w-33'>  <img src={img_1.src} alt='' /> </div> */}
           </div>
         </div>
       </div>

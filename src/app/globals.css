@@ -438,10 +438,9 @@ input:focus {
   word-wrap: break-word;
 }
 .our_vault .vaults .pool-stats .w-33 {
-  border-right: 1px solid rgba(217, 217, 217, 0.4);
-  width: 33.3333%;
-  padding: 9.5px 0;
-  text-align: center;
+  width: 100%;
+  padding: 9.5px 20px;
+  text-align: left;
 }
 
 .our_vault .vaults .pool_btn_group {
