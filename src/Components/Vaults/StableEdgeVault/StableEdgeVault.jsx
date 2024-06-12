@@ -227,6 +227,7 @@ const StableEdgeVault = () => {
                   lineHeight: "160%",
                   fontSize: "12px",
                   marginBottom: "10px",
+                  display: "none",
                 }}
               >
                 The APY And Price Chart You See Have Already Taken All Fees Into

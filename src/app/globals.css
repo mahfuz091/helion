@@ -354,7 +354,7 @@ input:focus {
   color: #fff;
 }
 .our_vault .vaults .m_percentage {
-  padding: 30px 50px 146px 16px;
+  padding: 30px 50px 102px 16px;
   width: 40%;
   border-radius: 8px;
   border: 1px solid rgba(217, 217, 217, 0.4);
@@ -516,13 +516,13 @@ input:focus {
 
 @media (max-width: 1024px) {
   .our_vault .vaults .m_percentage {
-    padding: 30px 38px 110px 16px;
+    padding: 30px 38px 80px 16px;
   }
 }
 
 @media (max-width: 575px) {
   .our_vault .vaults .m_percentage {
-    padding: 30px 38px 226px 16px;
+    padding: 30px 38px 140px 16px;
   }
   .our_vault {
     padding: 50px 0;
