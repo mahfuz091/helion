@@ -336,6 +336,7 @@ input:focus {
   border: 1px solid rgba(52, 111, 145, 0.3);
 
   background: #fff;
+  min-height: 508px;
 }
 .dark .our_vault .vaults {
   background-color: rgb(32 36 40);
