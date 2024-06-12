@@ -6,14 +6,14 @@ const Blog = () => {
     <div className='blog'>
       <Container>
         <h2>Seamless Yield Automation</h2>
-        <p className='mb-1'>
+        <p className='mb-2'>
           At Helion EDGE, we specialize in delivering top-tier automated DeFi
           yield strategies designed to enhance your investment performance. Our
           expert team develops and curates a diverse range of algorithms
           tailored to meet the needs of both novice and experienced investors.
         </p>
 
-        <p className='mb-1'>
+        <p className='mb-2'>
           Our automated strategies leverage advanced analytics and real-time
           data to ensure optimal performance across various market conditions.
           By partnering with Helion EDGE, you gain access to meticulously
