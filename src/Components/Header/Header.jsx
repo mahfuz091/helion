@@ -15,7 +15,10 @@ const Header = () => {
   const [iframeSrc, setIframeSrc] = useState("");
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = (e) => {
+    e.preventDefault();
+    setShow(true);
+  };
   const handleCloseModal = () => {
     setShowModal(false);
   };
@@ -60,14 +63,17 @@ const Header = () => {
         </div>
         <div className='d-flex align-items-center gap-4'>
           <DarkMode></DarkMode>
-          <div className=' d-lg-none cursor-pointer' onClick={handleShow}>
+          <div
+            className=' d-lg-none cursor-pointer hambuger'
+            onClick={handleShow}
+          >
             <RxHamburgerMenu />
           </div>
           <button
             onClick={handleShowModal}
             className='thm_btn d-none d-lg-block'
           >
-            <a href=''>Contact Us</a>
+            <a href='#'>Contact Us</a>
           </button>
         </div>
         <Offcanvas show={show} onHide={handleClose}>
@@ -115,10 +121,7 @@ const Header = () => {
           <Modal.Body>
             <h4>Contact Us</h4>
 
-            <iframe
-              src='https://app.pipefy.com/public/form/cHvjaOoc'
-              frameborder='0'
-            ></iframe>
+            <iframe src={iframeSrc} frameborder='0'></iframe>
 
             {/* <form action=''>
               <div className=''>
