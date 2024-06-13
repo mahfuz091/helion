@@ -116,11 +116,13 @@ input:focus {
          Modal
 ------------------ */
 .modal-dialog {
-  max-width: 390px;
+  max-width: 480px;
+  width: 100%;
   z-index: 99999999999;
   position: relative;
   top: 80px;
 }
+
 .modal-header {
   border-bottom: none;
 }
@@ -138,6 +140,33 @@ input:focus {
   font-style: normal;
   font-weight: 700;
   line-height: 40px; /* 125% */
+}
+.modal-content iframe {
+  width: 350px;
+  height: 700px;
+}
+
+@media (min-width: 768px) {
+  .modal-content iframe {
+    width: 560px;
+    height: 650px;
+  }
+  .modal-dialog {
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 450px) {
+  .modal-dialog {
+    max-width: 380px;
+  }
+  .modal-content {
+    padding: 0 0px;
+  }
+}
+
+.offcanvas.offcanvas-start {
+  z-index: 999999;
 }
 
 .modal-content form div {
