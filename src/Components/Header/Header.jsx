@@ -119,8 +119,6 @@ const Header = () => {
             />
           </Modal.Header>
           <Modal.Body>
-            <h4>Contact Us</h4>
-
             <iframe src={iframeSrc} frameborder='0'></iframe>
 
             {/* <form action=''>
