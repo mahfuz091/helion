@@ -262,6 +262,8 @@ input:focus {
 
 .talk_btn {
   padding: 20px 40px;
+  position: relative;
+  z-index: 99999999;
 }
 
 .banner_image {
@@ -802,6 +804,21 @@ input:focus {
   fill: #38b6ff;
   stroke: none;
   cursor: pointer;
+}
+.footer .socials .twitter {
+  /* w-[45px] h-[45px] rounded-full border-[#ffffff40] border-[2px] flex items-center justify-center hover:bg-[#38b6ff] hover:border-none cursor-pointer */
+  width: 45px;
+  height: 45px;
+  border: 2px solid #ffffff40;
+  border-radius: 999999px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer .socials .twitter:hover {
+  background-color: #38b6ff;
+  border: none;
 }
 .footer ul.pages li {
   margin-bottom: 23px;
