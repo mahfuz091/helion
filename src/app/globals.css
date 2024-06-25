@@ -399,12 +399,25 @@ input:focus {
   background: #000;
 }
 .our_vault .vaults .m_percentage p {
-  color: #47a571;
   /* font-family: "Neue Machina"; */
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 160%; /* 25.6px */
+}
+.our_vault .vaults .m_percentage .green {
+  color: #47a571;
+  position: relative;
+}
+.our_vault .vaults .m_percentage .red {
+  color: red;
+  position: relative;
+}
+.our_vault .vaults .m_percentage .green::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .our_vault .vaults .mt-16 {

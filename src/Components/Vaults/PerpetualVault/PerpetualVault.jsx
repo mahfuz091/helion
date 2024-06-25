@@ -1,8 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Tab, Nav } from "react-bootstrap";
-import img from "../../../app/assets/images/Rectangle 3467615.png";
-import img_1 from "../../../app/assets/images/Frame1413372731.png";
+
 import PerpetualPriceDay from "@/Components/Charts/PerpetualVault/PerpetualPriceDay";
 import PerpetualPriceWeek from "@/Components/Charts/PerpetualVault/PerpetualPriceWeek";
 import PerpetualPriceYear from "@/Components/Charts/PerpetualVault/PerpetualPriceYear";
@@ -19,10 +18,23 @@ const PerpetualVault = () => {
   const [apy, setApy] = useState(false);
   const [apyP, setApyP] = useState(vaultApy.monthly);
   const [chartBar, setChartBar] = useState(false);
+
   const [m, setM] = useState(null);
+  const [w, setW] = useState(null);
+  const [d, setD] = useState(null);
+  const [q, setQ] = useState(null);
+  const [hM, setHM] = useState(null);
+  const [y, setY] = useState(null);
+  const [tokenPerformance, setTokenPerformance] = useState(y);
+  const [tokenPerformStat, setTokenPerformStat] = useState("1Y");
+
   useEffect(() => {
     setApyP(vaultApy.monthly);
   }, [vaultApy]);
+
+  useEffect(() => {
+    setTokenPerformance(y);
+  }, [y]);
 
   const toggleChartBar = () => {
     setChartBar(!chartBar);
@@ -143,7 +155,12 @@ const PerpetualVault = () => {
       // console.log("V", calculatePercentage(1156469104021087516));
 
       // Process the response data
+      setD(formattedPerformanceMetrics["1d"]);
       setM(formattedPerformanceMetrics["1m"]);
+      setW(formattedPerformanceMetrics["1w"]);
+      setQ(formattedPerformanceMetrics["1q"]);
+      setHM(formattedPerformanceMetrics["6m"]);
+      setY(formattedPerformanceMetrics["1y"]);
     } catch (error) {
       console.error("Error fetching GraphQL data:", error);
     }
@@ -189,7 +206,13 @@ const PerpetualVault = () => {
       </div>
       <div className='d-flex align-items-center gap-4 mt-16'>
         <div className='m_percentage'>
-          <p>{m}% 1M</p>
+          <p className={`${tokenPerformance > 0 ? "green" : "red"}`}>
+            {isNaN(tokenPerformance) || tokenPerformance === undefined
+              ? ""
+              : `${tokenPerformance > 0 ? "▲" : "▼"} ${Math.abs(
+                  tokenPerformance
+                )}% ${tokenPerformStat}`}
+          </p>
         </div>
         <div className='m_total'>
           <div className='m_total-head '>
@@ -270,28 +293,52 @@ const PerpetualVault = () => {
                 <Nav variant='pills' className='flex'>
                   <Nav.Item>
                     <Nav.Link eventKey='priceDay'>
-                      <button className='responsive-button short-text-day'>
+                      <button
+                        onClick={() => {
+                          setTokenPerformance(d);
+                          setTokenPerformStat("1D");
+                        }}
+                        className='responsive-button short-text-day'
+                      >
                         Day
                       </button>
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey='priceWeek'>
-                      <button className='responsive-button short-text-week'>
+                      <button
+                        onClick={() => {
+                          setTokenPerformance(w);
+                          setTokenPerformStat("1W");
+                        }}
+                        className='responsive-button short-text-week'
+                      >
                         Week
                       </button>
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey='priceMonth'>
-                      <button className='responsive-button short-text-month'>
+                      <button
+                        onClick={() => {
+                          setTokenPerformance(m);
+                          setTokenPerformStat("1M");
+                        }}
+                        className='responsive-button short-text-month'
+                      >
                         Month
                       </button>
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey='priceYear'>
-                      <button className='responsive-button short-text-year'>
+                      <button
+                        onClick={() => {
+                          setTokenPerformance(y);
+                          setTokenPerformStat("1Y");
+                        }}
+                        className='responsive-button short-text-year'
+                      >
                         Year
                       </button>
                     </Nav.Link>
@@ -302,14 +349,26 @@ const PerpetualVault = () => {
                 <Nav variant='pills' className='flex'>
                   <Nav.Item>
                     <Nav.Link eventKey='apyMonth'>
-                      <button className='responsive-button short-text-month'>
+                      <button
+                        onClick={() => {
+                          setTokenPerformance(m);
+                          setTokenPerformStat("1M");
+                        }}
+                        className='responsive-button short-text-month'
+                      >
                         Month
                       </button>
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey='apyYear'>
-                      <button className='responsive-button short-text-year'>
+                      <button
+                        onClick={() => {
+                          setTokenPerformance(y);
+                          setTokenPerformStat("1Y");
+                        }}
+                        className='responsive-button short-text-year'
+                      >
                         Year
                       </button>
                     </Nav.Link>

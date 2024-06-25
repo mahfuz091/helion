@@ -19,7 +19,17 @@ const StableEdgeVault = () => {
   const [apy, setApy] = useState(false);
   const [apyP, setApyP] = useState(vaultApy.monthly);
   const [m, setM] = useState(null);
+  const [w, setW] = useState(null);
+  const [d, setD] = useState(null);
+  const [q, setQ] = useState(null);
+  const [hM, setHM] = useState(null);
+  const [y, setY] = useState(null);
+  const [tokenPerformance, setTokenPerformance] = useState(y);
+  const [tokenPerformStat, setTokenPerformStat] = useState("1Y");
 
+  useEffect(() => {
+    setTokenPerformance(y);
+  }, [y]);
   const [chartBar, setChartBar] = useState(false);
   useEffect(() => {
     setApyP(vaultApy.monthly);
@@ -112,14 +122,26 @@ const StableEdgeVault = () => {
         String(num).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
       // Function to format percentage change with sign
+      // const calculatePercentage = (value) => {
+      //   return ((parseFloat(value) / 10 ** 18 - 1) * 100).toFixed(2);
+      // };
       const calculatePercentage = (value) => {
-        return ((parseFloat(value) / 10 ** 18 - 1) * 100).toFixed(2);
+        // Parse the value to float and divide by 10^18
+        const percentageChange = parseFloat(value) / 10 ** 18;
+
+        // Calculate the percentage change relative to 1 (subtract 1 to get the change)
+        const change = (percentageChange - 1) * 100;
+
+        // Format the change to 2 decimal places
+        const formattedChange = change.toFixed(2);
+
+        // Determine the sign (+ or -)
+        const sign = change > 0 ? "+" : change < 0 ? "-" : "";
+
+        // Return the formatted percentage change with sign
+        return `${sign}${formattedChange}`;
       };
 
-      // Convert BigInt values to numbers
-      const convertBigIntToNumber = (value) => parseFloat(value);
-
-      // Calculate percentage change for each performance metric
       // Calculate percentage change for each performance metric and format it with sign
       const formattedPerformanceMetrics = {
         "1d": calculatePercentage(performanceMetrics.day),
@@ -146,7 +168,12 @@ const StableEdgeVault = () => {
       );
 
       // Process the response data
+      setD(formattedPerformanceMetrics["1d"]);
       setM(formattedPerformanceMetrics["1m"]);
+      setW(formattedPerformanceMetrics["1w"]);
+      setQ(formattedPerformanceMetrics["1q"]);
+      setHM(formattedPerformanceMetrics["6m"]);
+      setY(formattedPerformanceMetrics["1y"]);
     } catch (error) {
       console.error("Error fetching GraphQL data:", error);
     }
@@ -192,7 +219,13 @@ const StableEdgeVault = () => {
       </div>
       <div className='d-flex align-items-center gap-4 mt-16'>
         <div className='m_percentage'>
-          <p>{m}% 1M</p>
+          <p className={`${tokenPerformance > 0 ? "green" : "red"}`}>
+            {isNaN(tokenPerformance) || tokenPerformance === undefined
+              ? ""
+              : `${tokenPerformance > 0 ? "▲" : "▼"} ${Math.abs(
+                  tokenPerformance
+                )}% ${tokenPerformStat}`}
+          </p>
         </div>
         <div className='m_total'>
           <div className='m_total-head '>
@@ -271,28 +304,52 @@ const StableEdgeVault = () => {
                 <Nav variant='pills' className='flex'>
                   <Nav.Item>
                     <Nav.Link eventKey='priceDay'>
-                      <button className='responsive-button short-text-day'>
+                      <button
+                        onClick={() => {
+                          setTokenPerformance(d);
+                          setTokenPerformStat("1D");
+                        }}
+                        className='responsive-button short-text-day'
+                      >
                         Day
                       </button>
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey='priceWeek'>
-                      <button className='responsive-button short-text-week'>
+                      <button
+                        onClick={() => {
+                          setTokenPerformance(w);
+                          setTokenPerformStat("1W");
+                        }}
+                        className='responsive-button short-text-week'
+                      >
                         Week
                       </button>
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey='priceMonth'>
-                      <button className='responsive-button short-text-month'>
+                      <button
+                        onClick={() => {
+                          setTokenPerformance(m);
+                          setTokenPerformStat("1M");
+                        }}
+                        className='responsive-button short-text-month'
+                      >
                         Month
                       </button>
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey='priceYear'>
-                      <button className='responsive-button short-text-year'>
+                      <button
+                        onClick={() => {
+                          setTokenPerformance(y);
+                          setTokenPerformStat("1Y");
+                        }}
+                        className='responsive-button short-text-year'
+                      >
                         Year
                       </button>
                     </Nav.Link>
@@ -303,14 +360,26 @@ const StableEdgeVault = () => {
                 <Nav variant='pills' className='flex'>
                   <Nav.Item>
                     <Nav.Link eventKey='apyMonth'>
-                      <button className='responsive-button short-text-month'>
+                      <button
+                        onClick={() => {
+                          setTokenPerformance(m);
+                          setTokenPerformStat("1M");
+                        }}
+                        className='responsive-button short-text-month'
+                      >
                         Month
                       </button>
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey='apyYear'>
-                      <button className='responsive-button short-text-year'>
+                      <button
+                        onClick={() => {
+                          setTokenPerformance(y);
+                          setTokenPerformStat("1Y");
+                        }}
+                        className='responsive-button short-text-year'
+                      >
                         Year
                       </button>
                     </Nav.Link>
