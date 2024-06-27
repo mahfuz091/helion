@@ -17,7 +17,7 @@ const InnoVault = () => {
   const [tvl, setTvl] = useState("");
   const [price, setPrice] = useState(true);
   const [apy, setApy] = useState(false);
-  const [apyP, setApyP] = useState(vaultApy.monthly);
+
   const [m, setM] = useState(null);
   const [w, setW] = useState(null);
   const [d, setD] = useState(null);
@@ -26,9 +26,10 @@ const InnoVault = () => {
   const [y, setY] = useState(null);
   const [tokenPerformance, setTokenPerformance] = useState(y);
   const [tokenPerformStat, setTokenPerformStat] = useState("1Y");
+  const [apyP, setApyP] = useState(`${Math.abs(d)}`);
 
   useEffect(() => {
-    setApyP(vaultApy.monthly);
+    setApyP(`${Math.abs(d)}`);
   }, [vaultApy]);
 
   useEffect(() => {
@@ -77,9 +78,13 @@ const InnoVault = () => {
                   year
               }
               apy{
+        
                 monthly
                 weekly
+                
+                
               }
+              
 
             
                
@@ -113,6 +118,7 @@ const InnoVault = () => {
       // Do something with the data...
       // Convert performance metrics to "1d", "1w", "1m", "6m", "1y" format
       const performanceMetrics = responseData.data.fund.performanceMetrics;
+      console.log(responseData?.data?.fund?.apy);
       setvaultApy(responseData.data.fund.apy);
       setTvl(responseData.data.fund.totalValue);
 
@@ -233,21 +239,23 @@ const InnoVault = () => {
         <div className='m_total'>
           <div className='m_total-head '>
             <div className='d-flex align-items-baseline gap-2'>
-              <p>APY</p>
+              <p>APR</p>
               <div className='custom_select'>
                 <select
                   onChange={handleSelectChange}
                   name=''
                   id=''
-                  defaultValue={apyP}
+                  defaultValue={d}
                 >
-                  <option value={vaultApy.monthly}>1M </option>
+                  <option value={`${Math.abs(d)}`}>1D </option>
                   <option value={vaultApy.weekly}>1W </option>
+                  <option value={vaultApy.monthly}>1M </option>
+                  <option value={`${Math.abs(y)}`}>1Y </option>
                 </select>
               </div>
             </div>
             <div className='line'></div>
-            <div>
+            {/* <div>
               <p
                 style={{
                   lineHeight: "160%",
@@ -269,7 +277,7 @@ const InnoVault = () => {
                 The APY And Price Chart You See Have Already Taken All Fees Into
                 Account.
               </p>
-            </div>
+            </div> */}
           </div>
           <div className='pool-stats d-flex '>
             <div className='w-33'>

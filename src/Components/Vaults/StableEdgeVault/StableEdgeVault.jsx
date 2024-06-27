@@ -1,8 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Tab, Nav } from "react-bootstrap";
-import img from "../../../app/assets/images/Rectangle 3467615.png";
-import img_1 from "../../../app/assets/images/Frame1413372731.png";
+import { Tab, Nav } from "react-bootstrap";
+
 import StableEdgePriceDay from "@/Components/Charts/StableEdgeVaultChart/StableEdgePriceDay";
 import StableEdgePriceWeek from "@/Components/Charts/StableEdgeVaultChart/StableEdgePriceWeek";
 import StableEdgePriceYear from "@/Components/Charts/StableEdgeVaultChart/StableEdgePriceYear";
@@ -17,7 +16,7 @@ const StableEdgeVault = () => {
   const [tvl, setTvl] = useState("");
   const [price, setPrice] = useState(true);
   const [apy, setApy] = useState(false);
-  const [apyP, setApyP] = useState(vaultApy.monthly);
+
   const [m, setM] = useState(null);
   const [w, setW] = useState(null);
   const [d, setD] = useState(null);
@@ -26,13 +25,14 @@ const StableEdgeVault = () => {
   const [y, setY] = useState(null);
   const [tokenPerformance, setTokenPerformance] = useState(y);
   const [tokenPerformStat, setTokenPerformStat] = useState("1Y");
+  const [apyP, setApyP] = useState(`${Math.abs(d)}`);
 
   useEffect(() => {
     setTokenPerformance(y);
   }, [y]);
   const [chartBar, setChartBar] = useState(false);
   useEffect(() => {
-    setApyP(vaultApy.monthly);
+    setApyP(`${Math.abs(d)}`);
   }, [vaultApy]);
 
   const toggleChartBar = () => {
@@ -230,21 +230,23 @@ const StableEdgeVault = () => {
         <div className='m_total'>
           <div className='m_total-head '>
             <div className='d-flex align-items-baseline gap-2'>
-              <p>APY</p>
+              <p>APR</p>
               <div className='custom_select'>
                 <select
                   onChange={handleSelectChange}
                   name=''
                   id=''
-                  defaultValue={apyP}
+                  defaultValue={d}
                 >
-                  <option value={vaultApy.monthly}>1M </option>
+                  <option value={`${Math.abs(d)}`}>1D </option>
                   <option value={vaultApy.weekly}>1W </option>
+                  <option value={vaultApy.monthly}>1M </option>
+                  <option value={`${Math.abs(y)}`}>1Y </option>
                 </select>
               </div>
             </div>
             <div className='line'></div>
-            <div>
+            {/* <div>
               <p
                 style={{
                   lineHeight: "160%",
@@ -266,7 +268,7 @@ const StableEdgeVault = () => {
                 The APY And Price Chart You See Have Already Taken All Fees Into
                 Account.
               </p>
-            </div>
+            </div> */}
           </div>
           <div className='pool-stats d-flex '>
             <div className='w-33'>

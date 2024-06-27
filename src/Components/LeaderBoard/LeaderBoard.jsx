@@ -22,7 +22,7 @@ const LeaderBoard = () => {
 
   const [searchQuery, setSearchQuery] = useState("");
 
-  console.log(leaderBoardData);
+  // console.log(leaderBoardData);
 
   const formatLargeNumber = (number) => {
     if (number >= 1e24) {
@@ -257,7 +257,7 @@ const LeaderBoard = () => {
   //     console.error("Error fetching GraphQL data:", error);
   //   }
   // };
-  console.log(data);
+  // console.log(data);
   useEffect(() => {
     setData(leaderBoardData);
   }, [leaderBoardData]);
